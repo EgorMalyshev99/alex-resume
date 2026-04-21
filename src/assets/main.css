@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Work Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #222;
+  --color-ink-dim: #373737;
+  --color-brand: #071026;
+  --color-brand-hover: #1a2440;
+}
+
+html,
+body {
+  @apply min-h-dvh;
+}

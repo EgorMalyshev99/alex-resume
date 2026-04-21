@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "linkedin": "Linkedin",
+    "behance": "Behance",
+    "contacts": "Контакты",
+    "switchLanguage": "Сменить язык"
+  },
+  "hero": {
+    "greeting": "Меня зовут",
+    "intro": "Алекс, я Senior Product Designer",
+    "titleLine1": "Проектирую цифровые продукты для",
+    "titleLine2": "B2B и B2C",
+    "cta": {
+      "download": "Скачать CV",
+      "view": "Смотреть кейсы"
+    }
+  },
+  "sidebar": {
+    "brand": "Алекс",
+    "items": [
+      { "label": "Кейсы", "href": "#cases" },
+      { "label": "Обо мне", "href": "#about" },
+      { "label": "Процесс", "href": "#process" },
+      { "label": "Навыки", "href": "#skills" },
+      { "label": "Опыт", "href": "#experience" },
+      { "label": "Контакты", "href": "#contacts" }
+    ]
+  },
+  "cases": {
+    "title": "Избранные кейсы",
+    "description": "Три главы одной продуктовой экосистемы — каждая со своей аудиторией, ментальной моделью и метрикой успеха.",
+    "items": [
+      {
+        "slug": "rizzult-influencers",
+        "title": "Rizzult — приложение для инфлюенсеров",
+        "role": "Продуктовый дизайн",
+        "description": "Мобильный продукт для креаторов: сделки, контент, выплаты. От онбординга до глубокой аналитики.",
+        "tags": ["Mobile", "B2C", "Дизайн-система"],
+        "image": "https://placehold.co/400x452/e8e6f0/3c39ea/png?text=Influencers"
+      },
+      {
+        "slug": "rizzult-talent-manager",
+        "title": "Rizzult Talent Manager",
+        "role": "Продуктовый дизайн",
+        "description": "Веб-кокпит для талант-менеджеров: управление ростером, переговоры с брендами и закрытие контрактов.",
+        "tags": ["Web", "B2B", "CRM"],
+        "image": "https://placehold.co/400x452/efeae0/373737/png?text=Talent+Manager"
+      },
+      {
+        "slug": "rizzult-brands",
+        "title": "Rizzult для брендов",
+        "role": "Продуктовый дизайн",
+        "description": "Self-serve платформа для брендов: запуск кампаний, трекинг метрик и выплаты креаторам.",
+        "tags": ["Web", "B2B", "Платежи"],
+        "image": "https://placehold.co/400x452/e0ecef/071026/png?text=Brands"
+      }
+    ],
+    "readMore": "Открыть кейс →"
+  },
+  "about": {
+    "title": "Обо мне",
+    "body": "Продуктовый дизайнер с 7+ годами опыта. Веду B2B и B2C продукты end-to-end — от постановки задачи и исследования до пиксель-перфекта в передаче разработке. Беру ответственность за фичу, но больше — за результат."
+  },
+  "process": {
+    "title": "Мой процесс",
+    "description": "Пять шагов от проблемы до прода. Достаточно лёгкий, чтобы быстро двигаться, и достаточно структурный, чтобы защитить на продуктовом ревью.",
+    "steps": [
+      { "title": "Discovery", "description": "Интервью со стейкхолдерами, desk research, разбор конкурентов." },
+      { "title": "Define", "description": "Проблема, jobs-to-be-done, метрики успеха — зафиксированы письменно." },
+      { "title": "Explore", "description": "Дивергентные скетчи, low-fi флоу, быстрые циклы юзабилити." },
+      { "title": "Design", "description": "High-fi UI, токены дизайн-системы, интерактивные спеки — без двусмысленностей." },
+      { "title": "Ship & learn", "description": "Парно с разработкой во время билда, пост-релизный разбор аналитики, шорт-лист следующих ставок." }
+    ]
+  },
+  "skills": {
+    "title": "Навыки",
+    "description": "Что я практикую каждый день. Жирным — то, что на критическом пути большинства брифов.",
+    "columns": [
+      {
+        "title": "Дизайн",
+        "items": [
+          "Продуктовый и UX дизайн",
+          "Информационная архитектура",
+          "Прототипирование интеракций и моушена",
+          "Визуальный дизайн и типографика",
+          "Развитие дизайн-системы"
+        ]
+      },
+      {
+        "title": "Ресёрч",
+        "items": [
+          "Пользовательские интервью",
+          "Юзабилити-тестирование",
+          "JTBD и opportunity framing",
+          "Количественный анализ"
+        ]
+      },
+      {
+        "title": "Delivery",
+        "items": [
+          "Figma-библиотеки и токены",
+          "Спеки и хэндофф",
+          "Парная работа с разработкой",
+          "Дизайн A/B экспериментов",
+          "Аналитика и пост-релизный разбор"
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "title": "Опыт",
+    "description": "Где шипил, где учился и где набивал шишки.",
+    "entries": [
+      {
+        "company": "Rizzult",
+        "role": "Senior Product Designer",
+        "period": "2023 – сейчас",
+        "avatar": "https://placehold.co/62x62/e8e6f0/3c39ea/png?text=RZ",
+        "bullets": [
+          "Вёл end-to-end дизайн трёх B2B2C продуктов на одной дизайн-системе.",
+          "Еженедельные ресёрч-циклы с креаторами, агентствами и brand ops.",
+          "Выпустил talent-manager кокпит из 0 → 1, используется 40+ агентствами."
+        ]
+      },
+      {
+        "company": "Acme Studio",
+        "role": "Product Designer",
+        "period": "2020 – 2023",
+        "avatar": "https://placehold.co/62x62/efeae0/373737/png?text=AC",
+        "bullets": [
+          "Участвовал в пивоте consumer-финтеха от свайпа карт к кешбэк-маркетплейсу.",
+          "Построил in-house дизайн-систему с нуля до 200+ компонентов."
+        ]
+      },
+      {
+        "company": "Фриланс",
+        "role": "Product Designer",
+        "period": "2018 – 2020",
+        "avatar": "https://placehold.co/62x62/e0ecef/071026/png?text=FR",
+        "bullets": [
+          "Выпустил MVP-интерфейсы для двух SaaS-стартапов (один поглощён).",
+          "Работал с фаундерами над позиционированием, IA и инвестор-деками.",
+          "Менторил двух джунов через первые зарелиженные фичи."
+        ]
+      },
+      {
+        "company": "BrandLab",
+        "role": "Дизайнер",
+        "period": "2017 – 2018",
+        "avatar": "https://placehold.co/62x62/f0e8e8/373737/png?text=BL",
+        "bullets": [
+          "Визуальная идентика для DTC-брендов ранней стадии.",
+          "Начал переход от бренд-дизайна к продуктовым системам."
+        ]
+      },
+      {
+        "company": "Университет",
+        "role": "BA, Communication Design",
+        "period": "2013 – 2017",
+        "avatar": "https://placehold.co/62x62/eeeeee/373737/png?text=UN",
+        "bullets": ["Диплом по доступной навигации в общественном транспорте."]
+      }
+    ]
+  },
+  "footerCta": {
+    "title": "Связаться",
+    "description": "Открыт к Product Design ролям, коллаборациям и содержательным разговорам.",
+    "linkedin": "Linkedin",
+    "behance": "Behance",
+    "telegram": "Telegram"
+  },
+  "footer": {
+    "copyright": "© {year} Алекс. Сделано с заботой."
+  },
+  "caseDetails": {
+    "rizzult-influencers": {
+      "badge": "Кейс · Mobile · B2C",
+      "title": "Rizzult — приложение для инфлюенсеров",
+      "subtitle": "Мобильный продукт для креаторов. От пустого состояния до дашборда выплат."
+    },
+    "rizzult-talent-manager": {
+      "badge": "Кейс · Web · B2B",
+      "title": "Rizzult Talent Manager",
+      "subtitle": "Кокпит агентства. Ростер, deal flow и выплаты в одном месте."
+    },
+    "rizzult-brands": {
+      "badge": "Кейс · Web · B2B",
+      "title": "Rizzult для брендов",
+      "subtitle": "Self-serve запуск кампаний. Дискавери, бриф, платежи — в одном флоу."
+    },
+    "comingSoon": "Содержимое кейса скоро появится."
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Страница не найдена",
+    "body": "Такой страницы нет — или ссылка устарела. Вернись на главную и попробуй снова.",
+    "cta": "← На главную"
+  }
+}

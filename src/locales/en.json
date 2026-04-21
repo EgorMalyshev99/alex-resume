@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "linkedin": "Linkedin",
+    "behance": "Behance",
+    "contacts": "Contacts",
+    "switchLanguage": "Switch language"
+  },
+  "hero": {
+    "greeting": "I'm",
+    "intro": "Alex and as a Senior Product Designer",
+    "titleLine1": "I design digital products for",
+    "titleLine2": "B2B and B2C",
+    "cta": {
+      "download": "Download CV",
+      "view": "View the cases"
+    }
+  },
+  "sidebar": {
+    "brand": "Alex",
+    "items": [
+      { "label": "Cases", "href": "#cases" },
+      { "label": "About me", "href": "#about" },
+      { "label": "My Process", "href": "#process" },
+      { "label": "Skills", "href": "#skills" },
+      { "label": "Experience", "href": "#experience" },
+      { "label": "Contacts", "href": "#contacts" }
+    ]
+  },
+  "cases": {
+    "title": "Selected cases",
+    "description": "Three chapters of the same product ecosystem — each with its own audience, mental model and success metric.",
+    "items": [
+      {
+        "slug": "rizzult-influencers",
+        "title": "Rizzult — App for Influencers",
+        "role": "Product Design",
+        "description": "Mobile product for creators to manage deals, content and payouts. From discovery to deep dashboards.",
+        "tags": ["Mobile", "B2C", "Design system"],
+        "image": "https://placehold.co/400x452/e8e6f0/3c39ea/png?text=Influencers"
+      },
+      {
+        "slug": "rizzult-talent-manager",
+        "title": "Rizzult Talent Manager",
+        "role": "Product Design",
+        "description": "Web cockpit for talent managers to oversee rosters, negotiate with brands and close contracts.",
+        "tags": ["Web", "B2B", "CRM"],
+        "image": "https://placehold.co/400x452/efeae0/373737/png?text=Talent+Manager"
+      },
+      {
+        "slug": "rizzult-brands",
+        "title": "Rizzult for Brands",
+        "role": "Product Design",
+        "description": "Self-serve platform for brands to launch campaigns, track performance and pay creators.",
+        "tags": ["Web", "B2B", "Payments"],
+        "image": "https://placehold.co/400x452/e0ecef/071026/png?text=Brands"
+      }
+    ],
+    "readMore": "Read case →"
+  },
+  "about": {
+    "title": "About me",
+    "body": "Product designer with 7+ years shipping B2B and B2C products end-to-end — from problem framing and research to pixel-precise delivery. Happy to own a feature, happier to own an outcome."
+  },
+  "process": {
+    "title": "My process",
+    "description": "Five steps from problem to production. Lightweight enough to move fast, structured enough to defend in a product review.",
+    "steps": [
+      { "title": "Discovery", "description": "Stakeholder interviews, desk research, competitor teardown." },
+      { "title": "Define", "description": "Problem statement, user jobs, success metrics agreed in writing." },
+      { "title": "Explore", "description": "Divergent sketches, low-fi flows, quick usability loops." },
+      { "title": "Design", "description": "High-fi UI, design-system tokens, interaction specs handed off with zero ambiguity." },
+      { "title": "Ship & learn", "description": "Paired with engineering during build, post-launch analytics review, next-bet shortlist." }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "What I practice daily. Bold if it's on the critical path for most briefs I take.",
+    "columns": [
+      {
+        "title": "Design",
+        "items": [
+          "Product & UX design",
+          "Information architecture",
+          "Interaction & motion prototyping",
+          "Visual design & typography",
+          "Design-system stewardship"
+        ]
+      },
+      {
+        "title": "Research",
+        "items": [
+          "User interviews",
+          "Usability testing",
+          "JTBD & opportunity framing",
+          "Quantitative analysis"
+        ]
+      },
+      {
+        "title": "Delivery",
+        "items": [
+          "Figma libraries & tokens",
+          "Spec / handoff craft",
+          "Paired build with engineering",
+          "A/B experiment design",
+          "Analytics & post-launch review"
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "description": "Where I've shipped, studied and learned the hard lessons.",
+    "entries": [
+      {
+        "company": "Rizzult",
+        "role": "Senior Product Designer",
+        "period": "2023 – Now",
+        "avatar": "https://placehold.co/62x62/e8e6f0/3c39ea/png?text=RZ",
+        "bullets": [
+          "Owned end-to-end design of three B2B2C products sharing one design system.",
+          "Led weekly research loops with creators, agencies and brand ops.",
+          "Shipped the 0 → 1 talent-manager cockpit used by 40+ agencies."
+        ]
+      },
+      {
+        "company": "Acme Studio",
+        "role": "Product Designer",
+        "period": "2020 – 2023",
+        "avatar": "https://placehold.co/62x62/efeae0/373737/png?text=AC",
+        "bullets": [
+          "Helped pivot a consumer fintech from card swipe to cashback marketplace.",
+          "Built the in-house design-system from zero tokens to 200+ components."
+        ]
+      },
+      {
+        "company": "Freelance",
+        "role": "Product Designer",
+        "period": "2018 – 2020",
+        "avatar": "https://placehold.co/62x62/e0ecef/071026/png?text=FR",
+        "bullets": [
+          "Delivered MVP UI for two SaaS startups (one acquired).",
+          "Partnered with founders on positioning, IA and investor decks.",
+          "Coached two junior designers through their first shipped features."
+        ]
+      },
+      {
+        "company": "BrandLab",
+        "role": "Designer",
+        "period": "2017 – 2018",
+        "avatar": "https://placehold.co/62x62/f0e8e8/373737/png?text=BL",
+        "bullets": [
+          "Visual-identity work for early-stage DTC brands.",
+          "Began transitioning from brand to product systems."
+        ]
+      },
+      {
+        "company": "University",
+        "role": "BA, Communication Design",
+        "period": "2013 – 2017",
+        "avatar": "https://placehold.co/62x62/eeeeee/373737/png?text=UN",
+        "bullets": ["Thesis on accessible wayfinding in public transit."]
+      }
+    ]
+  },
+  "footerCta": {
+    "title": "Let's connect",
+    "description": "Open to product design roles, collaborations, and meaningful conversations.",
+    "linkedin": "Linkedin",
+    "behance": "Behance",
+    "telegram": "Telegram"
+  },
+  "footer": {
+    "copyright": "© {year} Alex. Crafted with care."
+  },
+  "caseDetails": {
+    "rizzult-influencers": {
+      "badge": "Case · Mobile · B2C",
+      "title": "Rizzult — App for Influencers",
+      "subtitle": "The creator-side mobile app. From empty-state to payouts dashboard."
+    },
+    "rizzult-talent-manager": {
+      "badge": "Case · Web · B2B",
+      "title": "Rizzult Talent Manager",
+      "subtitle": "The agency cockpit. Roster management, deal flow, and payouts in one place."
+    },
+    "rizzult-brands": {
+      "badge": "Case · Web · B2B",
+      "title": "Rizzult for Brands",
+      "subtitle": "Self-serve campaign launcher. Discovery, briefing, payments — in one flow."
+    },
+    "comingSoon": "Case content coming soon."
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page not found",
+    "body": "The page you're after doesn't exist — or the link is dated. Head back to the homepage and try again.",
+    "cta": "← Back home"
+  }
+}

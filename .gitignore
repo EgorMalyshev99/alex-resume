@@ -1,4 +1,9 @@
 .idea
 .vscode
+.claude
+.obsidian
 .env
+.eslintcache
 node_modules
+dist
+typed-router.d.ts
