@@ -65,11 +65,26 @@
     "title": "My process",
     "description": "Five steps from problem to production. Lightweight enough to move fast, structured enough to defend in a product review.",
     "steps": [
-      { "title": "Discovery", "description": "Stakeholder interviews, desk research, competitor teardown." },
-      { "title": "Define", "description": "Problem statement, user jobs, success metrics agreed in writing." },
-      { "title": "Explore", "description": "Divergent sketches, low-fi flows, quick usability loops." },
-      { "title": "Design", "description": "High-fi UI, design-system tokens, interaction specs handed off with zero ambiguity." },
-      { "title": "Ship & learn", "description": "Paired with engineering during build, post-launch analytics review, next-bet shortlist." }
+      {
+        "title": "Discovery",
+        "description": "Stakeholder interviews, desk research, competitor teardown."
+      },
+      {
+        "title": "Define",
+        "description": "Problem statement, user jobs, success metrics agreed in writing."
+      },
+      {
+        "title": "Explore",
+        "description": "Divergent sketches, low-fi flows, quick usability loops."
+      },
+      {
+        "title": "Design",
+        "description": "High-fi UI, design-system tokens, interaction specs handed off with zero ambiguity."
+      },
+      {
+        "title": "Ship & learn",
+        "description": "Paired with engineering during build, post-launch analytics review, next-bet shortlist."
+      }
     ]
   },
   "skills": {
@@ -88,12 +103,7 @@
       },
       {
         "title": "Research",
-        "items": [
-          "User interviews",
-          "Usability testing",
-          "JTBD & opportunity framing",
-          "Quantitative analysis"
-        ]
+        "items": ["User interviews", "Usability testing", "JTBD & opportunity framing", "Quantitative analysis"]
       },
       {
         "title": "Delivery",
@@ -173,22 +183,357 @@
     "copyright": "© {year} Alex. Crafted with care."
   },
   "caseDetails": {
+    "back": "Back",
+    "overviewLabel": "Overview",
+    "teamLabel": "Team",
+    "ndaLabel": "Limited Disclosure",
+    "impactOverviewLabel": "Impact Overview",
+    "comingSoon": "Case content coming soon.",
     "rizzult-influencers": {
       "badge": "Case · Mobile · B2C",
       "title": "Rizzult — App for Influencers",
-      "subtitle": "The creator-side mobile app. From empty-state to payouts dashboard."
+      "subtitle": "The creator-side mobile app. From empty-state to payouts dashboard.",
+      "overview": "Transformed Rizzult's influencer workflow from a manual, scout-led process into a mobile self-service platform, allowing creators to independently discover projects, apply to campaigns, and manage collaborations.",
+      "nda": "Some details are hidden under NDA.",
+      "team": ["Me", "PM", "FD", "FD", "BE", "BE", "BE"],
+      "appFlow": [
+        "Find a collaboration project",
+        "Review the company and campaign rules",
+        "Submit an application",
+        "Send materials for approval",
+        "Submit the publication for confirmation"
+      ],
+      "impactOverview": [
+        {
+          "title": "Independent creator workflow",
+          "body": "Enabled influencers to manage key collaboration steps independently in one mobile experience."
+        },
+        {
+          "title": "Better campaign transparency",
+          "body": "Improved access to brand information, campaign requirements, and participation guidelines before applying."
+        },
+        {
+          "title": "Reduced operational friction",
+          "body": "Structured the flow from application to content approval and publication confirmation into a clearer process."
+        }
+      ],
+      "toc": ["Goal", "My Role", "Process", "Key UX Decisions", "Impact"],
+      "goal": {
+        "title": "Goal",
+        "body": "The main challenge was to design <strong>the product from the ground up</strong> and <strong>turn a broad idea into a clear, usable mobile experience</strong> for influencers. The app needed to combine two different value areas — <strong>creator growth and monetization</strong> — in a way that felt <strong>simple, relevant, and easy to navigate on mobile.</strong>"
+      },
+      "myRole": {
+        "title": "My Role",
+        "intro": "As a Lead Product Designer, I owned the end-to-end product logic and experience strategy.",
+        "items": [
+          {
+            "title": "UX Strategy",
+            "body": "Mapping complex <strong>core product logic</strong> and multi-sided marketplace flows."
+          },
+          {
+            "title": "Visual Design",
+            "body": "Establishing a high-fidelity <strong>visual design language</strong> for the mobile-first era."
+          },
+          {
+            "title": "Design Systems",
+            "body": "Building and <strong>scaling the project through a dedicated design system.</strong>"
+          },
+          {
+            "title": "Prototyping",
+            "body": "Developing complex <strong>interactive prototypes</strong> for rapid user validation."
+          }
+        ]
+      },
+      "process": {
+        "title": "Process",
+        "intro": "Working closely with the Product Manager, Product Owner, and creators to shape, test, and improve the product experience.",
+        "items": [
+          {
+            "title": "Defining Structure",
+            "body": "Collaborative work with the Product Director to shape app structure and core logic."
+          },
+          {
+            "title": "Concepts to Prototypes",
+            "body": "Translating ideas into interface concepts, flows, and interactive prototypes."
+          },
+          {
+            "title": "Usability Testing with Creators",
+            "body": "Reviewing and validating the experience with a small group of UGC creators."
+          },
+          {
+            "title": "Iterating the Product",
+            "body": "Iterated on product flows and interactions based on testing in Figma and the live product."
+          }
+        ]
+      },
+      "keyDecisions": {
+        "title": "Key UX Decisions",
+        "intro": "Key UX decisions were focused on reducing friction, improving clarity, and supporting creators throughout the flow.",
+        "items": [
+          {
+            "title": "Reducing self-service complexity",
+            "body": "Many creators were not used to handling the full campaign flow themselves, since similar processes had previously been supported by scouts. Because of this, I focused on making the experience as simple and guided as possible."
+          },
+          {
+            "title": "Making relevant opportunities easy to find",
+            "body": "A key decision was to help influencers quickly identify projects that matched their profile and were worth applying to, reducing the effort required to browse and evaluate options."
+          },
+          {
+            "title": "Simplifying the application and submission flow",
+            "body": "The participation flow was designed to feel lightweight and clear, so users could easily apply to a project, complete the required steps, and later submit content for moderation without unnecessary friction."
+          },
+          {
+            "title": "Making statuses and progress visible",
+            "body": "Special attention was given to statuses, progress states, and next-step clarity. Users needed to always understand where they were in the process — whether waiting for approval, preparing content, submitting materials, or expecting payment."
+          },
+          {
+            "title": "Adapting hierarchy for mobile clarity",
+            "body": "Since the product was mobile-first, I designed the interface to support quick scanning, clear prioritization, and fast actions, especially for repeat tasks."
+          }
+        ]
+      },
+      "impact": {
+        "title": "Impact",
+        "intro": "Early outcomes from launch showed the product's potential to support creators more independently and efficiently.",
+        "items": [
+          "The product was launched and showed early signs that creators could independently find projects, apply to campaigns, and complete publishing-related actions.",
+          "The experience helped validate a more self-service model, with the potential to reduce reliance on scouts and lower manual operational effort.",
+          "Positive feedback from influencers highlighted the value of the app's educational and utility-driven content.",
+          "Features related to content planning helped creators organize their work more effectively and increased the app's practical day-to-day relevance.",
+          "These elements supported stronger user loyalty and encouraged more regular engagement with the product."
+        ]
+      }
     },
     "rizzult-talent-manager": {
       "badge": "Case · Web · B2B",
       "title": "Rizzult Talent Manager",
-      "subtitle": "The agency cockpit. Roster management, deal flow, and payouts in one place."
+      "subtitle": "The agency cockpit. Roster management, deal flow, and payouts in one place.",
+      "overview": "Designed a centralised web cockpit for talent agencies to manage creator rosters, negotiate brand deals, and track campaigns — replacing disconnected spreadsheets and email threads with a single integrated workspace.",
+      "nda": "Some details are hidden under NDA.",
+      "team": ["Me", "PM", "FD", "BE", "BE"],
+      "appFlow": [
+        "Browse creator roster",
+        "Review deal proposals",
+        "Negotiate contract terms",
+        "Track campaign progress",
+        "Approve creator payouts"
+      ],
+      "impactOverview": [
+        {
+          "title": "Centralised roster control",
+          "body": "Gave talent managers a single source of truth for creator relationships, stats, and active campaigns."
+        },
+        {
+          "title": "Faster deal pipeline",
+          "body": "Streamlined the negotiation-to-signature flow, reducing back-and-forth between agencies and brands."
+        },
+        {
+          "title": "Transparent payout management",
+          "body": "Brought payment tracking into the same workspace, eliminating manual reconciliation steps."
+        }
+      ],
+      "toc": ["Goal", "My Role", "Process", "Key UX Decisions", "Impact"],
+      "goal": {
+        "title": "Goal",
+        "body": "The core challenge was to design a <strong>complex B2B management tool</strong> that remained simple enough for daily use. Talent managers were juggling dozens of creators, brands, and active campaigns across <strong>disconnected email threads, spreadsheets, and messaging apps.</strong> The goal was to bring this fragmented workflow into <strong>one cohesive, professional interface.</strong>"
+      },
+      "myRole": {
+        "title": "My Role",
+        "intro": "As Lead Product Designer, I drove product strategy, interaction design, and the visual system for the entire cockpit.",
+        "items": [
+          {
+            "title": "UX Strategy",
+            "body": "Mapping <strong>complex agency workflows</strong> and multi-party negotiation flows."
+          },
+          {
+            "title": "Visual Design",
+            "body": "Designing a <strong>dense, data-rich interface</strong> that stays readable at a glance."
+          },
+          {
+            "title": "Design Systems",
+            "body": "Extending the shared system to <strong>cover B2B table and form patterns.</strong>"
+          },
+          {
+            "title": "Prototyping",
+            "body": "Building <strong>interactive negotiation flow prototypes</strong> for stakeholder validation."
+          }
+        ]
+      },
+      "process": {
+        "title": "Process",
+        "intro": "Deep collaboration with agency stakeholders and internal PMs to map real talent management workflows.",
+        "items": [
+          {
+            "title": "Stakeholder Research",
+            "body": "Shadowing talent managers and mapping their existing tools and mental models."
+          },
+          {
+            "title": "Information Architecture",
+            "body": "Structuring roster, deal, and payment data into a navigable hierarchy."
+          },
+          {
+            "title": "Prototype Testing",
+            "body": "Validating key flows with agency power users across multiple rounds."
+          },
+          {
+            "title": "Iterating on Density",
+            "body": "Refining data-table layouts and filters based on real usage feedback."
+          }
+        ]
+      },
+      "keyDecisions": {
+        "title": "Key UX Decisions",
+        "intro": "Decisions centred on balancing information density with usability for professional daily use.",
+        "items": [
+          {
+            "title": "Roster as the primary entry point",
+            "body": "Talent managers think in creators first, campaigns second. Making the roster the home screen aligned the tool with their natural mental model and shortened time-to-task."
+          },
+          {
+            "title": "Inline deal status visibility",
+            "body": "Deal stages needed to be visible without opening details. Inline status chips let managers scan pipeline health across many deals at once."
+          },
+          {
+            "title": "Separating negotiation from execution",
+            "body": "Pre-signature negotiation and post-signature campaign tracking were distinct enough to warrant separate views, reducing cognitive load at each stage."
+          },
+          {
+            "title": "Making payment expectations transparent",
+            "body": "Delayed payment visibility was a major pain point. Bringing expected payout dates and amounts into the campaign view reduced inbound queries from creators."
+          },
+          {
+            "title": "Progressive disclosure for complex data",
+            "body": "With many fields per creator and deal, progressive disclosure kept the default view clean while giving power users access to full detail on demand."
+          }
+        ]
+      },
+      "impact": {
+        "title": "Impact",
+        "intro": "The cockpit launched to 40+ agencies and demonstrated measurable improvements in agency efficiency.",
+        "items": [
+          "Agencies reported significantly reduced time spent switching between tools to track creator and deal status.",
+          "The deal pipeline view became the primary workspace for brand negotiations, replacing email-based tracking.",
+          "Payment transparency features reduced the volume of creator payment enquiries reaching talent managers.",
+          "The design system extension laid the foundation for future B2B feature development across the platform.",
+          "Positive reception from early agency partners led to faster onboarding of new clients."
+        ]
+      }
     },
     "rizzult-brands": {
       "badge": "Case · Web · B2B",
       "title": "Rizzult for Brands",
-      "subtitle": "Self-serve campaign launcher. Discovery, briefing, payments — in one flow."
-    },
-    "comingSoon": "Case content coming soon."
+      "subtitle": "Self-serve campaign launcher. Discovery, briefing, payments — in one flow.",
+      "overview": "Designed the brand-facing side of the Rizzult platform — a self-serve campaign tool that lets marketing teams discover relevant creators, define campaign briefs, track content performance, and manage creator payouts without agency intermediaries.",
+      "nda": "Some details are hidden under NDA.",
+      "team": ["Me", "PM", "FD", "BE", "BE"],
+      "appFlow": [
+        "Discover relevant creators",
+        "Define campaign brief",
+        "Review applications",
+        "Track content performance",
+        "Process creator payments"
+      ],
+      "impactOverview": [
+        {
+          "title": "Self-serve campaign launch",
+          "body": "Enabled brands to go from brief to active campaign independently, without requiring agency involvement."
+        },
+        {
+          "title": "Creator discovery clarity",
+          "body": "Gave brand teams the data they needed to evaluate creator fit before committing to a collaboration."
+        },
+        {
+          "title": "End-to-end payment flow",
+          "body": "Connected campaign completion to creator payout in one traceable workflow, reducing finance team overhead."
+        }
+      ],
+      "toc": ["Goal", "My Role", "Process", "Key UX Decisions", "Impact"],
+      "goal": {
+        "title": "Goal",
+        "body": "Brands needed a way to run influencer campaigns <strong>without relying on agencies as intermediaries.</strong> The challenge was to design a platform that made creator discovery, campaign briefing, and payment <strong>feel approachable for non-specialist marketing teams</strong> while handling the complexity behind the scenes."
+      },
+      "myRole": {
+        "title": "My Role",
+        "intro": "As Lead Product Designer, I owned the end-to-end brand-side experience from discovery through payment.",
+        "items": [
+          {
+            "title": "UX Strategy",
+            "body": "Mapping <strong>brand-side campaign workflows</strong> and identifying key drop-off points."
+          },
+          {
+            "title": "Visual Design",
+            "body": "Designing a <strong>trustworthy, business-grade interface</strong> that reflects brand credibility."
+          },
+          {
+            "title": "Design Systems",
+            "body": "Adapting shared tokens to <strong>support the brand-facing product context.</strong>"
+          },
+          {
+            "title": "Prototyping",
+            "body": "Validating the <strong>brief-to-launch funnel</strong> with brand marketing stakeholders."
+          }
+        ]
+      },
+      "process": {
+        "title": "Process",
+        "intro": "Worked closely with brand-side stakeholders and internal growth teams to understand campaign launch needs.",
+        "items": [
+          {
+            "title": "Brand Stakeholder Research",
+            "body": "Interviewing marketing managers to understand how they currently run influencer activations."
+          },
+          {
+            "title": "Discovery Flow Design",
+            "body": "Designing the creator search and shortlisting experience to match brand evaluation criteria."
+          },
+          {
+            "title": "Brief Builder Testing",
+            "body": "Iterating on the campaign brief form with real brand users to reduce completion friction."
+          },
+          {
+            "title": "Payment Flow Validation",
+            "body": "Working with finance stakeholders to ensure the payout flow met compliance and transparency requirements."
+          }
+        ]
+      },
+      "keyDecisions": {
+        "title": "Key UX Decisions",
+        "intro": "Decisions focused on making the platform feel safe and efficient for brand marketers running campaigns independently.",
+        "items": [
+          {
+            "title": "Guided campaign creation",
+            "body": "Many brand users were running their first influencer campaign. A step-by-step brief builder with contextual guidance reduced uncertainty and increased completion rates."
+          },
+          {
+            "title": "Creator fit signals over raw numbers",
+            "body": "Rather than exposing raw follower counts, the discovery interface surfaced relevance signals — audience match, past campaign categories, and engagement quality — to support better decision-making."
+          },
+          {
+            "title": "Separation of discovery and campaign management",
+            "body": "Discovery and active campaign management were separated into distinct modes to avoid overwhelming first-time users with the full product surface before they were ready."
+          },
+          {
+            "title": "Payment transparency from day one",
+            "body": "Brands needed to know total campaign costs upfront. Showing estimated payout totals during brief creation reduced sticker shock at checkout and improved conversion."
+          },
+          {
+            "title": "Performance data at the right granularity",
+            "body": "Campaign performance views were designed for marketing managers, not analysts — summary metrics with clear trend indicators, not raw data tables."
+          }
+        ]
+      },
+      "impact": {
+        "title": "Impact",
+        "intro": "The brand platform validated the self-serve model and opened a new acquisition channel for the business.",
+        "items": [
+          "Brand teams were able to launch campaigns independently without requiring agency or operations support.",
+          "The guided brief builder reduced brief completion drop-off and produced higher-quality campaign specifications.",
+          "Creator discovery features improved brand confidence in creator selection, reducing post-selection second-guessing.",
+          "The integrated payment flow reduced manual finance team involvement in creator payout processing.",
+          "Positive early reception supported the business case for continued self-serve product investment."
+        ]
+      }
+    }
   },
   "notFound": {
     "code": "404",

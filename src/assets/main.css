@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
 @theme {
   --font-sans: 'Work Sans', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -8,9 +13,19 @@
   --color-ink-dim: #373737;
   --color-brand: #071026;
   --color-brand-hover: #1a2440;
+
+  --color-paper: #f4f2ec;
+  --color-surface: #fcfaf7;
+  --color-accent: #3c39ea;
+  --color-accent-hover: #2a27c7;
+  --color-accent-subtle: #ebe9ff;
+  --color-accent-glow: #907cff;
+
+  --shadow-card: 0px 0px 12px #3a3a3a08;
 }
 
 html,
 body {
   @apply min-h-dvh;
+  scroll-behavior: smooth;
 }

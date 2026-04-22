@@ -19,7 +19,6 @@ Personal resume/portfolio site — landing + three Rizzult case pages + 404.
 - fileKey `6LgP45gV62aqyaLM6BsJAZ`
 - Desktop: node `1:155` (Home Page/EN, 1400×6320)
 - Mobile: node `1:495` (Main, 430×7727)
-- Cloud MCP (`plugin_figma_figma`) is the working connector. Desktop MCP fails with permission error.
 
 ## Commands
 

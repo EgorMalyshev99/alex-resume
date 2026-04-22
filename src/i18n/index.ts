@@ -1,4 +1,5 @@
 import { createI18n } from 'vue-i18n'
+
 import en from '@/locales/en.json'
 import ru from '@/locales/ru.json'
 
@@ -15,9 +16,7 @@ function detectInitialLocale(): SupportedLocale {
     return stored as SupportedLocale
   }
   const browser = window.navigator.language.slice(0, 2).toLowerCase()
-  return (SUPPORT_LOCALES as readonly string[]).includes(browser)
-    ? (browser as SupportedLocale)
-    : DEFAULT_LOCALE
+  return (SUPPORT_LOCALES as readonly string[]).includes(browser) ? (browser as SupportedLocale) : DEFAULT_LOCALE
 }
 
 const initialLocale = detectInitialLocale()

@@ -1,22 +1,25 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite'
-import VueRouter from 'vue-router/vite'
-import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
+import vue from '@vitejs/plugin-vue'
+import { defineConfig, loadEnv } from 'vite'
+import vueDevTools from 'vite-plugin-vue-devtools'
+import VueRouter from 'vue-router/vite'
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [
-    VueRouter({ routesFolder: 'src/pages' }),
-    vue(),
-    vueDevTools(),
-    tailwindcss(),
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '')
+  return {
+    base: process.env.NODE_ENV === 'production' ? '/alex-resume/' : '/',
+    server: {
+      host: env.DEV_HOST,
+      port: Number(env.DEV_PORT),
     },
-  },
+    plugins: [VueRouter({ routesFolder: 'src/pages' }), vue(), vueDevTools(), tailwindcss()],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+      },
+    },
+  }
 })

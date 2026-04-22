@@ -1,9 +1,13 @@
 {
   "semi": false,
   "singleQuote": true,
-  "trailingComma": "all",
-  "printWidth": 100,
-  "arrowParens": "always",
+  "printWidth": 120,
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
   "endOfLine": "lf",
-  "plugins": []
+  "htmlWhitespaceSensitivity": "css",
+  "vueIndentScriptAndStyle": false,
+  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-classnames", "prettier-plugin-merge"]
 }
