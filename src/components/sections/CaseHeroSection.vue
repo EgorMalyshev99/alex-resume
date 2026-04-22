@@ -103,9 +103,15 @@ import { useI18n } from 'vue-i18n'
 import { RouterLink } from 'vue-router'
 
 const props = defineProps<{ slug: string }>()
-const { tm } = useI18n()
+const { t } = useI18n()
 
-const team = computed(() => tm(`caseDetails.${props.slug}.team`))
-const appFlow = computed(() => tm(`caseDetails.${props.slug}.appFlow`))
-const impactItems = computed(() => tm(`caseDetails.${props.slug}.impactOverview`))
+const team = computed(() => t(`caseDetails.${props.slug}.team`).split('|'))
+const appFlow = computed(() => t(`caseDetails.${props.slug}.appFlow`).split('|'))
+const impactItems = computed(() => {
+  const count = parseInt(t(`caseDetails.${props.slug}.impactCount`))
+  return Array.from({ length: count }, (_, i) => ({
+    title: t(`caseDetails.${props.slug}.impact${i + 1}Title`),
+    body: t(`caseDetails.${props.slug}.impact${i + 1}Body`),
+  }))
+})
 </script>

@@ -21,20 +21,21 @@
           <!-- Goal -->
           <div id="goal" class="flex flex-col gap-3">
             <h2 class="text-ink-dim text-8 leading-normal font-bold">
-              {{ $t(`caseDetails.${slug}.goal.title`) }}
+              {{ $t(`caseDetails.${slug}.goalTitle`) }}
             </h2>
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <p class="text-ink-dim text-xl leading-7.5" v-html="$t(`caseDetails.${slug}.goal.body`)" />
+            <p class="text-ink-dim text-xl leading-7.5">
+              {{ $t(`caseDetails.${slug}.goalBody`) }}
+            </p>
           </div>
 
           <!-- My Role -->
           <div id="my-role" class="flex flex-col gap-8">
             <div class="flex flex-col gap-3">
               <h2 class="text-ink-dim text-8 leading-normal font-bold">
-                {{ $t(`caseDetails.${slug}.myRole.title`) }}
+                {{ $t(`caseDetails.${slug}.myRoleTitle`) }}
               </h2>
               <p class="text-ink-dim text-xl leading-7.5">
-                {{ $t(`caseDetails.${slug}.myRole.intro`) }}
+                {{ $t(`caseDetails.${slug}.myRoleIntro`) }}
               </p>
             </div>
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -46,8 +47,7 @@
                 <div class="size-15 rounded-xl bg-neutral-200" aria-hidden="true" />
                 <div class="flex flex-col gap-4">
                   <p class="text-ink-dim text-2xl leading-normal font-semibold">{{ item.title }}</p>
-                  <!-- eslint-disable-next-line vue/no-v-html -->
-                  <p class="text-ink-dim text-lg leading-6" v-html="item.body" />
+                  <p class="text-ink-dim text-lg leading-6">{{ item.body }}</p>
                 </div>
               </div>
             </div>
@@ -57,10 +57,10 @@
           <div id="process" class="flex flex-col gap-8">
             <div class="flex flex-col gap-3">
               <h2 class="text-ink-dim text-8 leading-normal font-bold">
-                {{ $t(`caseDetails.${slug}.process.title`) }}
+                {{ $t(`caseDetails.${slug}.processTitle`) }}
               </h2>
               <p class="text-ink-dim text-xl leading-7.5">
-                {{ $t(`caseDetails.${slug}.process.intro`) }}
+                {{ $t(`caseDetails.${slug}.processIntro`) }}
               </p>
             </div>
             <div class="flex flex-col gap-6">
@@ -82,10 +82,10 @@
           <div id="key-decisions" class="flex flex-col gap-8">
             <div class="flex flex-col gap-3">
               <h2 class="text-ink-dim text-8 leading-normal font-bold">
-                {{ $t(`caseDetails.${slug}.keyDecisions.title`) }}
+                {{ $t(`caseDetails.${slug}.decisionsTitle`) }}
               </h2>
               <p class="text-ink-dim text-xl leading-7.5">
-                {{ $t(`caseDetails.${slug}.keyDecisions.intro`) }}
+                {{ $t(`caseDetails.${slug}.decisionsIntro`) }}
               </p>
             </div>
             <div class="flex flex-col gap-6">
@@ -108,10 +108,10 @@
           <div id="impact" class="flex flex-col gap-8">
             <div class="flex flex-col gap-3">
               <h2 class="text-ink-dim text-8 leading-normal font-bold">
-                {{ $t(`caseDetails.${slug}.impact.title`) }}
+                {{ $t(`caseDetails.${slug}.impactTitle`) }}
               </h2>
               <p class="text-ink-dim text-xl leading-7.5">
-                {{ $t(`caseDetails.${slug}.impact.intro`) }}
+                {{ $t(`caseDetails.${slug}.impactIntro`) }}
               </p>
             </div>
             <ul class="flex flex-col gap-5">
@@ -132,15 +132,39 @@ import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{ slug: string }>()
-const { tm } = useI18n()
+const { t } = useI18n()
 
-const tocLabels = computed(() => tm(`caseDetails.${props.slug}.toc`))
+const tocLabels = computed(() => t(`caseDetails.${props.slug}.toc`).split('|'))
 const tocAnchors = ['goal', 'my-role', 'process', 'key-decisions', 'impact']
 
-const myRoleItems = computed(() => tm(`caseDetails.${props.slug}.myRole.items`))
-const processItems = computed(() => tm(`caseDetails.${props.slug}.process.items`))
-const keyDecisions = computed(() => tm(`caseDetails.${props.slug}.keyDecisions.items`))
-const impactItems = computed(() => tm(`caseDetails.${props.slug}.impact.items`))
+const myRoleItems = computed(() => {
+  const count = parseInt(t(`caseDetails.${props.slug}.myRoleCount`))
+  return Array.from({ length: count }, (_, i) => ({
+    title: t(`caseDetails.${props.slug}.myRole${i + 1}Title`),
+    body: t(`caseDetails.${props.slug}.myRole${i + 1}Body`),
+  }))
+})
+
+const processItems = computed(() => {
+  const count = parseInt(t(`caseDetails.${props.slug}.processCount`))
+  return Array.from({ length: count }, (_, i) => ({
+    title: t(`caseDetails.${props.slug}.process${i + 1}Title`),
+    body: t(`caseDetails.${props.slug}.process${i + 1}Body`),
+  }))
+})
+
+const keyDecisions = computed(() => {
+  const count = parseInt(t(`caseDetails.${props.slug}.decisionsCount`))
+  return Array.from({ length: count }, (_, i) => ({
+    title: t(`caseDetails.${props.slug}.decision${i + 1}Title`),
+    body: t(`caseDetails.${props.slug}.decision${i + 1}Body`),
+  }))
+})
+
+const impactItems = computed(() => {
+  const count = parseInt(t(`caseDetails.${props.slug}.impactItemCount`))
+  return Array.from({ length: count }, (_, i) => t(`caseDetails.${props.slug}.impactItem${i + 1}`))
+})
 
 const activeAnchor = ref<string>('')
 
