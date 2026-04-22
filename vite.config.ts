@@ -10,7 +10,7 @@ import VueRouter from 'vue-router/vite'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
-    base: process.env.NODE_ENV === 'production' ? '/alex-resume/' : '/',
+    base: process.env.NODE_ENV === 'production' ? '/alex-cv/' : '/',
     server: {
       host: env.DEV_HOST,
       port: Number(env.DEV_PORT),

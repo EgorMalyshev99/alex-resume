@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Personal resume/portfolio site — landing + three Rizzult case pages + 404.
+Personal cv/portfolio site — landing + three Rizzult case pages + 404.
 
 **Pages (file-based):**
 
