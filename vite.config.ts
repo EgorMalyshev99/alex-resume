@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig, loadEnv } from 'vite'
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import VueRouter from 'vue-router/vite'
 
@@ -15,7 +16,7 @@ export default defineConfig(({ mode }) => {
       host: env.DEV_HOST,
       port: Number(env.DEV_PORT),
     },
-    plugins: [VueRouter({ routesFolder: 'src/pages' }), vue(), vueDevTools(), tailwindcss()],
+    plugins: [VueRouter({ routesFolder: 'src/pages' }), vue(), vueDevTools(), tailwindcss(), ViteImageOptimizer()],
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
