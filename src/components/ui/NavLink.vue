@@ -5,6 +5,7 @@
     :target="target"
     class="text-ink inline-flex items-center gap-0.5 px-4 py-2.5 text-base leading-6 transition-opacity
       hover:opacity-70"
+    @click="handleClick"
   >
     <slot />
   </a>
@@ -23,4 +24,13 @@ const props = withDefaults(
 
 const rel = computed(() => (props.external ? 'noopener noreferrer' : undefined))
 const target = computed(() => (props.external ? '_blank' : undefined))
+
+const handleClick = (e: MouseEvent) => {
+  if (!props.external && props.href.startsWith('#')) {
+    e.preventDefault()
+    if (props.href.length > 1) {
+      document.getElementById(props.href.slice(1))?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+}
 </script>

@@ -3,8 +3,10 @@
     <div class="container flex items-center py-4 lg:py-5">
       <div class="flex flex-1 items-center justify-between">
         <nav class="flex items-center gap-0">
-          <NavLink href="https://linkedin.com" external>{{ $t('nav.linkedin') }}</NavLink>
-          <NavLink href="https://behance.net" external>{{ $t('nav.behance') }}</NavLink>
+          <NavLink href="https://www.linkedin.com/in/alexey-matsko-867862216/" external>
+            {{ $t('nav.linkedin') }}
+          </NavLink>
+          <NavLink href="https://www.behance.net/smogrus64cf02" external>{{ $t('nav.behance') }}</NavLink>
           <NavLink href="#contacts">{{ $t('nav.contacts') }}</NavLink>
         </nav>
         <LocaleSwitcher />

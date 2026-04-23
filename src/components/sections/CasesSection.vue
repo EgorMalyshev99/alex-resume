@@ -1,36 +1,34 @@
 <template>
-  <section id="cases" class="py-20 lg:py-24" data-figma-node="1:182">
-    <header class="mb-12 flex flex-col gap-3">
+  <section id="cases">
+    <div class="mb-8 flex flex-col gap-3">
       <h2 class="text-ink-dim font-sans text-3xl font-bold lg:text-4xl">
         {{ $t('cases.title') }}
       </h2>
-      <p class="max-w-xl text-base leading-7 text-neutral-600">
+      <p class="text-ink-dim text-xl leading-7">
         {{ $t('cases.description') }}
       </p>
-    </header>
+    </div>
 
     <div class="flex flex-col gap-8 lg:gap-14">
-      <article
-        v-for="(c, idx) in cases"
-        :key="c.slug"
-        class="flex flex-col gap-6 lg:grid lg:items-stretch lg:gap-10"
-        :class="idx % 2 === 0 ? 'lg:grid-cols-2' : 'lg:grid-cols-2'"
-      >
+      <article v-for="item in cases" :key="item.href" class="flex flex-col lg:grid lg:grid-cols-2 lg:items-stretch">
         <CaseCard
-          :title="c.title"
-          :role="c.role"
-          :description="c.description"
-          :tags="c.tags"
-          :href="`/cases/${c.slug}`"
-          :class="idx % 2 === 1 ? 'lg:order-2' : ''"
+          :title="$t(item.title)"
+          :role="$t(item.role)"
+          :focus="item.focus"
+          :description="$t(item.description)"
+          :tags="item.tags.map((tag) => $t(tag))"
+          :href="item.href"
         />
-        <a
-          :href="`/cases/${c.slug}`"
-          class="block overflow-hidden rounded-2xl bg-neutral-100"
-          :class="idx % 2 === 1 ? 'lg:order-1' : ''"
+
+        <RouterLink
+          :to="item.href"
+          :class="[
+            'block overflow-hidden rounded-b-xl bg-neutral-100 lg:rounded-r-xl lg:rounded-b-none',
+            item.imageOrderClass,
+          ]"
         >
-          <img :src="c.image" :alt="c.title" width="400" height="452" class="size-full object-cover" />
-        </a>
+          <img :src="item.image" :alt="$t(item.title)" class="size-full object-cover" />
+        </RouterLink>
       </article>
     </div>
   </section>
@@ -38,19 +36,40 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { RouterLink } from 'vue-router'
 
 import CaseCard from '@/components/ui/CaseCard.vue'
 
-interface CaseItem {
-  slug: string
-  title: string
-  role: string
-  description: string
-  tags: string[]
-  image: string
-}
-
-const { tm } = useI18n()
-const cases = computed<CaseItem[]>(() => tm('cases.items'))
+const cases = computed(() => [
+  {
+    title: 'cases.influencersTitle',
+    role: 'cases.influencersRole',
+    focus: 'Creator flow, mobile UX',
+    description: 'cases.influencersDescription',
+    tags: ['cases.influencersTag1', 'cases.influencersTag2', 'cases.influencersTag3'],
+    href: '/cases/rizzult-influencers',
+    image: '/influencers-case-preview.jpg',
+    imageOrderClass: '',
+  },
+  {
+    title: 'cases.managerTitle',
+    role: 'cases.managerRole',
+    focus: 'Campaign management, B2B UX, User flow',
+    description: 'cases.managerDescription',
+    tags: ['cases.managerTag1', 'cases.managerTag2', 'cases.managerTag3'],
+    href: '/cases/rizzult-talent-manager',
+    image: '/managers-case-preview.jpg',
+    imageOrderClass: 'lg:order-1',
+  },
+  {
+    title: 'cases.brandsTitle',
+    role: 'cases.brandsRole',
+    focus: 'User flow, mobile UX',
+    description: 'cases.brandsDescription',
+    tags: ['cases.brandsTag1', 'cases.brandsTag2', 'cases.brandsTag3'],
+    href: '/cases/rizzult-brands',
+    image: '/brands-case-preview.jpg',
+    imageOrderClass: '',
+  },
+])
 </script>

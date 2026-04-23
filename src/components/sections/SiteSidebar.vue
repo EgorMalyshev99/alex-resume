@@ -1,15 +1,13 @@
 <template>
   <aside class="hidden w-75 shrink-0 self-start lg:sticky lg:top-24 lg:block" data-figma-node="1:174">
     <nav class="flex flex-col gap-4 font-sans">
-      <h2 class="text-ink-dim text-xl font-semibold">
-        {{ $t('sidebar.brand') }}
-      </h2>
-      <ul class="flex flex-col gap-2 text-base text-neutral-700">
-        <li v-for="item in items" :key="item.href">
+      <ul class="flex flex-col gap-2">
+        <li v-for="item in navItems" :key="item.href">
           <a
             :href="item.href"
-            class="hover:text-brand transition-colors"
-            :class="activeHref === item.href ? 'font-bold text-neutral-900' : ''"
+            class="text-ink-dim cursor-pointer"
+            :class="activeHref === item.href ? 'text-2xl font-bold' : 'text-xl'"
+            @click.prevent="scrollTo(item.href)"
           >
             {{ item.label }}
           </a>
@@ -23,23 +21,33 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-interface SidebarItem {
-  label: string
-  href: string
-}
+const { t } = useI18n()
 
-const { tm } = useI18n()
-const items = computed<SidebarItem[]>(() => tm('sidebar.items'))
+const navItems = computed(() => [
+  { label: t('sidebar.navCases'), href: '#cases' },
+  { label: t('sidebar.navAbout'), href: '#about' },
+  { label: t('sidebar.navProcess'), href: '#process' },
+  { label: t('sidebar.navExpertise'), href: '#expertise' },
+  { label: t('sidebar.navExperience'), href: '#experience' },
+  { label: t('sidebar.navContacts'), href: '#contacts' },
+])
 
 const activeHref = ref<string>('')
+
+function scrollTo(href: string) {
+  const el = document.getElementById(href.slice(1))
+  if (!el) return
+  const top = el.getBoundingClientRect().top + window.scrollY - 96
+  window.scrollTo({ top, behavior: 'smooth' })
+}
 
 let observer: IntersectionObserver | null = null
 
 function onScroll() {
   const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4
   if (atBottom) {
-    const lastItem = items.value.at(-1)
-    if (lastItem) activeHref.value = lastItem.href
+    const last = navItems.value.at(-1)
+    if (last) activeHref.value = last.href
   }
 }
 
@@ -55,9 +63,8 @@ onMounted(() => {
     { rootMargin: '-40% 0px -55% 0px' }
   )
 
-  items.value.forEach(({ href }) => {
-    const id = href.slice(1)
-    const el = document.getElementById(id)
+  navItems.value.forEach(({ href }) => {
+    const el = document.getElementById(href.slice(1))
     if (el) observer!.observe(el)
   })
 

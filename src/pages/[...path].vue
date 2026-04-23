@@ -12,7 +12,7 @@
       </p>
       <RouterLink
         to="/"
-        class="bg-brand font-display hover:bg-brand-hover inline-flex items-center gap-2 rounded-2xl px-6 py-3 text-base
+        class="bg-brand font-display hover:bg-brand-hover inline-flex items-center gap-2 rounded-xl px-6 py-3 text-base
           font-semibold text-white transition-colors"
       >
         {{ $t('notFound.cta') }}

@@ -32,6 +32,22 @@ pnpm format       # prettier over src/
 
 No test runner is configured yet.
 
+## Obsidian Vault
+
+**After every response**, append a brief summary to `C:\vault\Projects\alex-cv\sessions\YYYY-MM-DD-context.md` using `mcp__Obsidian__write_file`. Format:
+
+```
+## HH:MM — [1-sentence description of what was done]
+```
+
+Append — do not overwrite. Read existing content first, then write with new entry appended.
+
+Project context syncs to `C:\vault\Projects\alex-cv\`:
+
+- `README.md` — project overview
+
+Use the `Obsidian` MCP tools (`mcp__Obsidian__*`) to read/write vault notes. After next restart the MCP server will have full vault access.
+
 ## Stack
 
 Vue 3 SFC + Vite 8 + TypeScript 6 + vue-router v5 + Tailwind v4. Package manager: **pnpm**.
@@ -83,14 +99,6 @@ Routes are inferred from filenames: `src/pages/cases/rizzult-brands.vue` → `/c
   - `@theme { ... }` — design tokens become utility classes automatically (`--color-ink` → `text-ink`, `--font-sans` → `font-sans`, etc.).
 - **Container:** use Tailwind's built-in `container` utility as-is, never override via `@utility container { @media ... }`. Centering + padding added per consumer: `container mx-auto px-4 lg:px-6`. `AppContainer.vue` encapsulates that exact combo.
 - Fonts (`Work Sans`, `Inter`) loaded via `<link>` in `index.html`.
-
-## Breakpoint strategy — `lg:` only
-
-Mobile-first up to 1024px, desktop from `lg:` (1024px). Single breakpoint:
-
-- Base utilities target mobile.
-- `lg:` prefix for desktop-only rules: `flex-col lg:grid lg:grid-cols-[300px_minmax(0,1fr)]`, `hidden lg:block`, `text-2xl lg:text-4xl`.
-- `md:` / `xl:` / `2xl:` are **not** used without explicit need — Figma macros are pinned at 1400 (desktop) and 430 (mobile); everything between flows fluidly.
 
 ## Linting pipeline
 

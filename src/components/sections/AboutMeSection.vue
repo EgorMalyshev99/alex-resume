@@ -3,7 +3,7 @@
     <h2 class="text-ink-dim mb-6 font-sans text-3xl font-bold lg:text-4xl">
       {{ $t('about.title') }}
     </h2>
-    <p class="max-w-3xl text-base leading-7 text-neutral-700 lg:text-lg lg:leading-8">
+    <p class="font-sans text-xl">
       {{ $t('about.body') }}
     </p>
   </section>
