@@ -14,12 +14,6 @@ Personal cv/portfolio site — landing + three Rizzult case pages + 404.
 - `/cases/rizzult-brands` — Rizzult for Brands
 - Catch-all `[...path].vue` — 404
 
-**Figma source of truth** (Copy, access confirmed):
-
-- fileKey `6LgP45gV62aqyaLM6BsJAZ`
-- Desktop: node `1:155` (Home Page/EN, 1400×6320)
-- Mobile: node `1:495` (Main, 430×7727)
-
 ## Commands
 
 ```sh
@@ -31,22 +25,6 @@ pnpm format       # prettier over src/
 ```
 
 No test runner is configured yet.
-
-## Obsidian Vault
-
-**After every response**, append a brief summary to `C:\vault\Projects\alex-cv\sessions\YYYY-MM-DD-context.md` using `mcp__Obsidian__write_file`. Format:
-
-```
-## HH:MM — [1-sentence description of what was done]
-```
-
-Append — do not overwrite. Read existing content first, then write with new entry appended.
-
-Project context syncs to `C:\vault\Projects\alex-cv\`:
-
-- `README.md` — project overview
-
-Use the `Obsidian` MCP tools (`mcp__Obsidian__*`) to read/write vault notes. After next restart the MCP server will have full vault access.
 
 ## Stack
 
@@ -108,47 +86,3 @@ Two linters run sequentially via `npm-run-all2`:
 2. **eslint** — config in `eslint.config.ts`; vue + typescript rules. Pages/layouts get `vue/multi-word-component-names: off` because file-based routing requires single-word names like `index.vue` / `[...path].vue`.
 
 `eslint-config-prettier` is applied last so ESLint never conflicts with Prettier formatting. Prettier config in `.prettierrc` (`singleQuote`, no semi, `trailingComma: all`, `printWidth: 100`).
-
-<!-- gitnexus:start -->
-# GitNexus — Code Intelligence
-
-This project is indexed by GitNexus as **alex-cv** (124 symbols, 175 relationships, 0 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
-
-> If any GitNexus tool warns the index is stale, run `npx gitnexus analyze` in terminal first.
-
-## Always Do
-
-- **MUST run impact analysis before editing any symbol.** Before modifying a function, class, or method, run `gitnexus_impact({target: "symbolName", direction: "upstream"})` and report the blast radius (direct callers, affected processes, risk level) to the user.
-- **MUST run `gitnexus_detect_changes()` before committing** to verify your changes only affect expected symbols and execution flows.
-- **MUST warn the user** if impact analysis returns HIGH or CRITICAL risk before proceeding with edits.
-- When exploring unfamiliar code, use `gitnexus_query({query: "concept"})` to find execution flows instead of grepping. It returns process-grouped results ranked by relevance.
-- When you need full context on a specific symbol — callers, callees, which execution flows it participates in — use `gitnexus_context({name: "symbolName"})`.
-
-## Never Do
-
-- NEVER edit a function, class, or method without first running `gitnexus_impact` on it.
-- NEVER ignore HIGH or CRITICAL risk warnings from impact analysis.
-- NEVER rename symbols with find-and-replace — use `gitnexus_rename` which understands the call graph.
-- NEVER commit changes without running `gitnexus_detect_changes()` to check affected scope.
-
-## Resources
-
-| Resource | Use for |
-|----------|---------|
-| `gitnexus://repo/alex-cv/context` | Codebase overview, check index freshness |
-| `gitnexus://repo/alex-cv/clusters` | All functional areas |
-| `gitnexus://repo/alex-cv/processes` | All execution flows |
-| `gitnexus://repo/alex-cv/process/{name}` | Step-by-step execution trace |
-
-## CLI
-
-| Task | Read this skill file |
-|------|---------------------|
-| Understand architecture / "How does X work?" | `.claude/skills/gitnexus/gitnexus-exploring/SKILL.md` |
-| Blast radius / "What breaks if I change X?" | `.claude/skills/gitnexus/gitnexus-impact-analysis/SKILL.md` |
-| Trace bugs / "Why is X failing?" | `.claude/skills/gitnexus/gitnexus-debugging/SKILL.md` |
-| Rename / extract / split / refactor | `.claude/skills/gitnexus/gitnexus-refactoring/SKILL.md` |
-| Tools, resources, schema reference | `.claude/skills/gitnexus/gitnexus-guide/SKILL.md` |
-| Index, status, clean, wiki CLI commands | `.claude/skills/gitnexus/gitnexus-cli/SKILL.md` |
-
-<!-- gitnexus:end -->

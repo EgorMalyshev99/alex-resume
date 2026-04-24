@@ -11,34 +11,50 @@
             ← {{ $t('case.back') }}
           </RouterLink>
 
-          <h1 class="text-ink-dim lg:text-25 font-sans text-5xl leading-tight font-bold">
+          <h1 class="text-ink-dim lg:text-25 font-sans text-5xl font-bold">
             {{ $t('influencers.title') }}
           </h1>
 
           <div class="bg-surface shadow-card flex flex-col gap-3 rounded-xl p-6">
             <div class="flex flex-col gap-5 lg:flex-row">
               <div class="flex flex-1 flex-col gap-3">
-                <p class="text-ink-dim text-6.5 leading-normal font-bold">{{ $t('case.overviewLabel') }}</p>
-                <p class="text-ink-dim text-lg leading-5.5">{{ $t('influencers.overview') }}</p>
+                <p class="text-ink-dim text-[26px] font-bold">{{ $t('case.overviewLabel') }}</p>
+                <p class="text-ink-dim text-lg">{{ $t('influencers.overview') }}</p>
               </div>
               <div class="flex w-full flex-col gap-3 lg:w-50">
-                <p class="text-ink-dim text-6.5 leading-normal font-bold">{{ $t('case.teamLabel') }}</p>
-                <div class="flex">
-                  <div
-                    v-for="(member, i) in team"
-                    :key="i"
-                    class="border-surface flex h-9.25 min-w-9.25 items-center justify-center rounded-full border-2 px-2
-                      text-sm font-semibold text-white"
-                    :class="i === 0 ? 'bg-accent' : 'bg-ink-dim'"
-                    :style="{ marginLeft: i > 0 ? '-7px' : '0', zIndex: team.length - i }"
-                  >
-                    {{ member }}
+                <p class="text-ink-dim text-[26px] font-bold">{{ $t('case.teamLabel') }}</p>
+                <div class="flex flex-col gap-1">
+                  <div class="flex">
+                    <div
+                      v-for="(member, i) in team.slice(0, 2)"
+                      :key="`team-r1-${i}`"
+                      class="border-surface flex h-9.25 min-w-9.25 items-center justify-center rounded-full border-2
+                        text-sm font-semibold text-white"
+                      :class="i === 0 ? 'bg-accent' : 'bg-ink-dim'"
+                      :style="{ marginLeft: i > 0 ? '-7px' : '0', zIndex: team.length - i }"
+                    >
+                      {{ member }}
+                    </div>
+                  </div>
+                  <div v-if="team.length > 2" class="flex">
+                    <div
+                      v-for="(member, i) in team.slice(2)"
+                      :key="`team-r2-${i}`"
+                      class="border-surface bg-ink-dim flex h-9.25 min-w-9.25 items-center justify-center rounded-full
+                        border-2 text-sm font-semibold text-white"
+                      :style="{
+                        marginLeft: i > 0 ? '-7px' : '0',
+                        zIndex: team.length - (i + 2),
+                      }"
+                    >
+                      {{ member }}
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="flex w-full flex-col gap-3 lg:w-75">
-                <p class="text-ink-dim text-6.5 leading-normal font-bold">{{ $t('case.ndaLabel') }}</p>
-                <p class="text-ink-dim text-lg leading-5.5">{{ $t('influencers.nda') }}</p>
+                <p class="text-ink-dim text-[26px] font-bold">{{ $t('case.ndaLabel') }}</p>
+                <p class="text-ink-dim text-lg">{{ $t('influencers.nda') }}</p>
               </div>
             </div>
           </div>
@@ -47,27 +63,28 @@
             <div class="flex gap-5 pb-4 lg:justify-between lg:pb-0">
               <div v-for="i in 5" :key="i" class="flex w-55 shrink-0 flex-col items-center gap-6">
                 <div
-                  class="bg-surface text-ink-dim shadow-card flex min-h-16.5 w-full items-center justify-center
-                    rounded-lg px-4 py-4 text-center text-sm leading-normal font-semibold"
+                  class="bg-surface text-ink-dim shadow-card flex min-h-18 w-full items-center justify-center rounded-lg
+                    px-4 py-4 text-center text-sm font-semibold"
                 >
                   {{ $t(`influencers.flow${i}`) }}
                 </div>
-                <div
-                  class="flex h-119 w-full items-center justify-center rounded-4xl bg-neutral-200 text-xs
-                    text-neutral-400"
-                >
-                  Screen {{ i }}
-                </div>
+                <img
+                  :src="`/influencers-case-${i}.png`"
+                  :alt="$t(`influencers.flow${i}`)"
+                  class="h-119 w-full rounded-lg object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>
 
           <div class="flex flex-col gap-6">
-            <h2 class="text-ink-dim text-6.5 leading-normal font-bold">{{ $t('case.impactOverviewLabel') }}</h2>
+            <h2 class="text-ink-dim text-[26px] font-bold">{{ $t('case.impactOverviewLabel') }}</h2>
             <div class="flex flex-col gap-4 lg:flex-row">
               <div v-for="i in 3" :key="i" class="bg-surface shadow-card flex flex-1 flex-col gap-4 rounded-xl p-6">
-                <p class="text-ink-dim text-xl leading-normal font-semibold">{{ $t(`influencers.impact${i}Title`) }}</p>
-                <p class="text-ink-dim text-base leading-5.5">{{ $t(`influencers.impact${i}Body`) }}</p>
+                <p class="text-ink-dim text-xl font-semibold">{{ $t(`influencers.impact${i}Title`) }}</p>
+                <p class="text-ink-dim text-base">{{ $t(`influencers.impact${i}Body`) }}</p>
               </div>
             </div>
           </div>
@@ -94,14 +111,15 @@
 
             <div class="flex flex-col gap-16 lg:gap-30">
               <div id="goal" class="flex flex-col gap-3">
-                <h2 class="text-ink-dim text-8 leading-normal font-bold">{{ $t('influencers.goalTitle') }}</h2>
-                <p class="text-ink-dim text-xl leading-7.5">{{ $t('influencers.goalBody') }}</p>
+                <h2 class="text-ink-dim text-3xl font-bold">{{ $t('influencers.goalTitle') }}</h2>
+                <!-- eslint-disable-next-line vue/no-v-html -- trusted locale copy -->
+                <p class="text-ink-dim text-xl" v-html="$t('influencers.goalBody')"></p>
               </div>
 
               <div id="my-role" class="flex flex-col gap-8">
                 <div class="flex flex-col gap-3">
-                  <h2 class="text-ink-dim text-8 leading-normal font-bold">{{ $t('influencers.myRoleTitle') }}</h2>
-                  <p class="text-ink-dim text-xl leading-7.5">{{ $t('influencers.myRoleIntro') }}</p>
+                  <h2 class="text-ink-dim text-3xl font-bold">{{ $t('influencers.myRoleTitle') }}</h2>
+                  <p class="text-ink-dim text-xl">{{ $t('influencers.myRoleIntro') }}</p>
                 </div>
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   <div
@@ -109,12 +127,12 @@
                     :key="i"
                     class="bg-surface shadow-card flex flex-col justify-center gap-5 rounded-xl p-6"
                   >
-                    <div class="size-15 rounded-xl bg-neutral-200" aria-hidden="true" />
+                    <img :src="roleCardIcons[i - 1]" class="size-15 shrink-0" width="60" height="60" alt="" />
                     <div class="flex flex-col gap-4">
-                      <p class="text-ink-dim text-2xl leading-normal font-semibold">
+                      <p class="text-ink-dim text-2xl font-semibold">
                         {{ $t(`influencers.role${i}Title`) }}
                       </p>
-                      <p class="text-ink-dim text-lg leading-6">{{ $t(`influencers.role${i}Body`) }}</p>
+                      <p class="text-ink-dim text-lg">{{ $t(`influencers.role${i}Body`) }}</p>
                     </div>
                   </div>
                 </div>
@@ -122,17 +140,17 @@
 
               <div id="process" class="flex flex-col gap-8">
                 <div class="flex flex-col gap-3">
-                  <h2 class="text-ink-dim text-8 leading-normal font-bold">{{ $t('influencers.processTitle') }}</h2>
-                  <p class="text-ink-dim text-xl leading-7.5">{{ $t('influencers.processIntro') }}</p>
+                  <h2 class="text-ink-dim text-3xl font-bold">{{ $t('influencers.processTitle') }}</h2>
+                  <p class="text-ink-dim text-xl">{{ $t('influencers.processIntro') }}</p>
                 </div>
                 <div class="flex flex-col gap-6">
                   <div v-for="i in 4" :key="i" class="bg-surface shadow-card flex items-center gap-5 rounded-xl p-6">
-                    <div class="size-15 shrink-0 rounded-xl bg-neutral-200" aria-hidden="true" />
+                    <img :src="decisionCardIcons[i - 1]" class="size-15 shrink-0" width="60" height="60" alt="" />
                     <div class="flex flex-col gap-3">
-                      <p class="text-ink-dim text-2xl leading-normal font-semibold">
+                      <p class="text-ink-dim text-2xl font-semibold">
                         {{ $t(`influencers.process${i}Title`) }}
                       </p>
-                      <p class="text-ink-dim text-lg leading-6">{{ $t(`influencers.process${i}Body`) }}</p>
+                      <p class="text-ink-dim text-lg">{{ $t(`influencers.process${i}Body`) }}</p>
                     </div>
                   </div>
                 </div>
@@ -140,8 +158,8 @@
 
               <div id="key-decisions" class="flex flex-col gap-8">
                 <div class="flex flex-col gap-3">
-                  <h2 class="text-ink-dim text-8 leading-normal font-bold">{{ $t('influencers.decisionsTitle') }}</h2>
-                  <p class="text-ink-dim text-xl leading-7.5">{{ $t('influencers.decisionsIntro') }}</p>
+                  <h2 class="text-ink-dim text-3xl font-bold">{{ $t('influencers.decisionsTitle') }}</h2>
+                  <p class="text-ink-dim text-xl">{{ $t('influencers.decisionsIntro') }}</p>
                 </div>
                 <div class="flex flex-col gap-6">
                   <div v-for="i in 5" :key="i" class="bg-surface shadow-card flex gap-5 rounded-xl p-6">
@@ -152,10 +170,10 @@
                       {{ i }}
                     </div>
                     <div class="flex flex-col gap-3">
-                      <p class="text-ink-dim text-2xl leading-normal font-semibold">
+                      <p class="text-ink-dim text-2xl font-semibold">
                         {{ $t(`influencers.decision${i}Title`) }}
                       </p>
-                      <p class="text-ink-dim text-lg leading-6">{{ $t(`influencers.decision${i}Body`) }}</p>
+                      <p class="text-ink-dim text-lg">{{ $t(`influencers.decision${i}Body`) }}</p>
                     </div>
                   </div>
                 </div>
@@ -163,13 +181,19 @@
 
               <div id="impact" class="flex flex-col gap-8">
                 <div class="flex flex-col gap-3">
-                  <h2 class="text-ink-dim text-8 leading-normal font-bold">{{ $t('influencers.impactTitle') }}</h2>
-                  <p class="text-ink-dim text-xl leading-7.5">{{ $t('influencers.impactIntro') }}</p>
+                  <h2 class="text-ink-dim text-3xl font-bold">{{ $t('influencers.impactTitle') }}</h2>
+                  <p class="text-ink-dim text-xl">{{ $t('influencers.impactIntro') }}</p>
                 </div>
                 <ul class="flex flex-col gap-5">
                   <li v-for="i in 5" :key="i" class="flex items-start gap-3">
-                    <span class="text-accent mt-1.75 shrink-0 text-base">→</span>
-                    <p class="text-ink-dim text-xl leading-7.5">{{ $t(`influencers.impactItem${i}`) }}</p>
+                    <img
+                      src="/icons/icon-arrow-right-alt.png"
+                      class="size-6.5 shrink-0"
+                      width="26"
+                      height="26"
+                      alt="arrow"
+                    />
+                    <p class="text-ink-dim text-xl">{{ $t(`influencers.impactItem${i}`) }}</p>
                   </li>
                 </ul>
               </div>
@@ -192,6 +216,21 @@ import DefaultLayout from '@/layouts/DefaultLayout.vue'
 const { t } = useI18n()
 
 const team = ['Me', 'PM', 'FD', 'FD', 'BE', 'BE', 'BE']
+
+const roleCardIcons = [
+  '/icons/icon-path.png',
+  '/icons/icon-design.png',
+  '/icons/icon-design.png',
+  '/icons/icon-target.png',
+] as const
+
+const decisionCardIcons = [
+  '/icons/icon-paper.png',
+  '/icons/icon-list.png',
+  '/icons/icon-checklist.png',
+  '/icons/icon-time.png',
+  '/icons/icon-time.png',
+] as const
 
 const tocAnchors = ['goal', 'my-role', 'process', 'key-decisions', 'impact']
 const tocItems = computed(() => [

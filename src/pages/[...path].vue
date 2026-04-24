@@ -7,7 +7,7 @@
       <h1 class="text-ink-dim font-sans text-2xl font-semibold lg:text-3xl">
         {{ $t('notFound.title') }}
       </h1>
-      <p class="max-w-lg text-base leading-7 text-neutral-600">
+      <p class="max-w-lg text-base text-neutral-600">
         {{ $t('notFound.body') }}
       </p>
       <RouterLink

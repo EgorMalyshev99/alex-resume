@@ -1,0 +1,22 @@
+---
+description: alex-cv project overview, commands, and stack
+alwaysApply: true
+---
+
+# alex-cv — core
+
+Personal CV/portfolio: landing + three Rizzult case pages + 404.
+
+**Routes (file-based):**
+
+- `/` → `src/pages/index.vue`
+- `/cases/rizzult-influencers`, `rizzult-talent-manager`, `rizzult-brands` → `src/pages/cases/{slug}.vue`
+- 404 → `src/pages/[...path].vue`
+
+**Commands:** `pnpm dev` | `pnpm build` | `pnpm preview` | `pnpm lint` | `pnpm format`
+
+**Stack:** Vue 3 SFC, Vite 8, TypeScript, vue-router v5, Tailwind v4, pnpm.
+
+**Entry:** `src/main.ts` → `./assets/main.css`, then mount `App.vue` with router. `@` → `src/`. DevTools via `vite-plugin-vue-devtools`.
+
+See `CLAUDE.md` for full detail; architecture and conventions in sibling rules under `src/**`.

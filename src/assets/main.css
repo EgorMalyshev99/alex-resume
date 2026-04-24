@@ -22,19 +22,9 @@
   --color-accent-glow: #907cff;
   --color-gray-400: #525252;
   --color-gray-300: #707070;
-  --color-gray-100: #DCDCDC;
+  --color-gray-100: #dcdcdc;
 
   --shadow-card: 0px 0px 12px #3a3a3a08;
-}
-
-:root {
-  --header-h: 4.75rem;
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --header-h: 5.25rem;
-  }
 }
 
 html,
@@ -43,5 +33,5 @@ body {
 }
 
 .body {
-  @apply font-sans text-base text-ink antialiased bg-paper;
+  @apply text-ink bg-paper font-sans text-base leading-tight antialiased;
 }

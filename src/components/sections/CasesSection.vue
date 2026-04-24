@@ -4,7 +4,7 @@
       <h2 class="text-ink-dim font-sans text-3xl font-bold lg:text-4xl">
         {{ $t('cases.title') }}
       </h2>
-      <p class="text-ink-dim text-xl leading-7">
+      <p class="text-ink-dim text-xl">
         {{ $t('cases.description') }}
       </p>
     </div>

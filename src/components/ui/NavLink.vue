@@ -3,8 +3,7 @@
     :href="href"
     :rel="rel"
     :target="target"
-    class="text-ink inline-flex items-center gap-0.5 px-4 py-2.5 text-base leading-6 transition-opacity
-      hover:opacity-70"
+    class="text-ink inline-flex items-center gap-0.5 px-4 py-2.5 text-base transition-opacity hover:opacity-70"
     @click="handleClick"
   >
     <slot />

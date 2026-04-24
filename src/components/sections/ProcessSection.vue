@@ -1,5 +1,5 @@
 <template>
-  <section id="process" class="py-16 lg:py-20" data-figma-node="1:290">
+  <section id="process" class="py-16 lg:py-20">
     <header class="mb-12 flex flex-col gap-3">
       <h2 class="text-ink-dim font-sans text-3xl font-bold lg:text-4xl">
         {{ $t('process.title') }}
@@ -16,7 +16,7 @@
           <h3 class="text-ink-dim font-sans text-lg font-semibold lg:text-2xl">
             {{ $t(`process.step${i}Title`) }}
           </h3>
-          <p class="text-sm leading-6 text-neutral-600 lg:text-lg">
+          <p class="text-sm text-neutral-600 lg:text-lg">
             {{ $t(`process.step${i}Body`) }}
           </p>
         </div>

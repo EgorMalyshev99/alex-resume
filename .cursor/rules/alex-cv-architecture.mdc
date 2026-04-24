@@ -1,0 +1,40 @@
+---
+description: Folder layout, page composition, routing, Tailwind v4, linting
+globs: src/**/*
+alwaysApply: false
+---
+
+# alex-cv — architecture & tooling
+
+## Layout
+
+```
+src/
+├── assets/main.css       # @import "tailwindcss" + @theme
+├── components/layout/    # AppHeader, AppFooter
+├── components/sections/  # one file = one landing section
+├── components/ui/        # AppButton, AppContainer, NavLink, CaseCard
+├── layouts/DefaultLayout.vue
+├── pages/                # file-based routes
+├── router/index.ts
+├── App.vue               # <RouterView /> only
+└── main.ts
+```
+
+**Page rule:** A page is only `<DefaultLayout>` + section (or case) imports. No layout spacing/classes on the page file — sections own container and spacing.
+
+## Routing
+
+- `vite.config.ts`: `VueRouter({ routesFolder: 'src/pages' })` **before** `vue()`.
+- `router/index.ts`: `import { routes } from 'vue-router/auto-routes'`.
+- `typed-router.d.ts` at repo root, in `tsconfig.app.json` `include`; `moduleResolution: "bundler"`.
+
+## Tailwind v4
+
+- Config only in `src/assets/main.css` (no `tailwind.config.js` / `postcss.config.js`).
+- Use built-in `container` as-is; center with `container mx-auto px-4 lg:px-6` (see `AppContainer.vue`).
+- Fonts: `Work Sans`, `Inter` via `<link>` in `index.html`.
+
+## Lint
+
+oxlint (`.oxlintrc.json`) then eslint (`eslint.config.ts`). Pages/layouts: `vue/multi-word-component-names: off` for `index.vue` / `[...path].vue`. Prettier last via `eslint-config-prettier`; `.prettierrc`: singleQuote, no semi, `trailingComma: all`, `printWidth: 100`.

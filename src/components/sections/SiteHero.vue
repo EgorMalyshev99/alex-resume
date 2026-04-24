@@ -1,20 +1,10 @@
 <template>
   <section
-    class="bg-paper relative flex min-h-[calc(100dvh-var(--header-h))] flex-col justify-center overflow-hidden px-4
-      py-20 lg:px-16 lg:py-24"
-    data-figma-node="1:157"
+    class="bg-paper relative flex min-h-dvh flex-col justify-center overflow-hidden px-4 py-20 lg:px-16 lg:py-24"
   >
-    <div
-      aria-hidden="true"
-      class="bg-accent-glow/15 pointer-events-none absolute -top-48 -right-40 size-150 rounded-full blur-3xl
-        lg:size-232.75"
-    />
-    <div
-      aria-hidden="true"
-      class="bg-accent/10 pointer-events-none absolute top-1/2 -left-60 size-200 rounded-full blur-3xl lg:size-318.75"
-    />
+    <HeroGlowSpheres />
 
-    <div class="relative mx-auto flex max-w-310 flex-col items-center gap-10 text-center">
+    <div class="relative z-10 mx-auto flex max-w-310 flex-col items-center gap-10 text-center">
       <div class="flex flex-col items-center gap-6">
         <div class="text-ink-dim flex flex-wrap items-center justify-center gap-3 font-sans text-xl lg:text-2xl">
           <span>{{ $t('hero.greeting') }}</span>
@@ -27,7 +17,7 @@
           <span>{{ $t('hero.intro') }}</span>
         </div>
 
-        <h1 class="text-ink-dim max-w-253 font-sans text-4xl leading-tight font-bold lg:text-6xl">
+        <h1 class="text-ink-dim max-w-253 font-sans text-4xl font-bold lg:text-6xl">
           {{ $t('hero.titleLine1') }} <br class="hidden lg:block" />
           {{ $t('hero.titleLine2') }}
         </h1>
@@ -46,6 +36,7 @@
 </template>
 
 <script setup lang="ts">
+import HeroGlowSpheres from '@/components/effects/HeroGlowSpheres.vue'
 import { Button } from '@/components/ui'
 
 const scrollToCases = () => {

@@ -1,5 +1,5 @@
 <template>
-  <aside class="hidden w-75 shrink-0 self-start lg:sticky lg:top-24 lg:block" data-figma-node="1:174">
+  <aside class="hidden w-75 shrink-0 self-start lg:sticky lg:top-24 lg:block">
     <nav class="flex flex-col gap-4 font-sans">
       <ul class="flex flex-col gap-2">
         <li v-for="item in navItems" :key="item.href">

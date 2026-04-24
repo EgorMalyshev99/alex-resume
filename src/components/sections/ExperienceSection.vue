@@ -1,5 +1,5 @@
 <template>
-  <section id="experience" class="py-16 lg:py-20" data-figma-node="1:386">
+  <section id="experience" class="py-16 lg:py-20">
     <div class="mb-12 flex flex-col gap-3">
       <h2 class="text-ink-dim font-sans text-3xl font-bold lg:text-4xl">
         {{ $t('experience.title') }}
@@ -28,7 +28,7 @@
           </div>
           <ul class="flex flex-col gap-2">
             <li v-for="i in item.bullets" :key="i" class="flex items-start gap-3">
-              <img src="/icons/icon-arrow-right.svg" width="26" height="26" class="size-6.5" alt="arrow right" />
+              <img src="/icons/icon-arrow-right-alt.png" width="26" height="26" class="size-6.5" alt="arrow right" />
               <span class="text-base text-gray-300">{{ $t(`experience.${item.key}Bullet${i}`) }}</span>
             </li>
           </ul>

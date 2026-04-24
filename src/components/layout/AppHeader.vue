@@ -1,5 +1,8 @@
 <template>
-  <header class="sticky top-0 z-50 w-full bg-white/20 backdrop-blur-[6px]" data-figma-node="1:483">
+  <header
+    class="top-0 z-50 w-full"
+    :class="isHome ? 'absolute inset-x-0 bg-transparent' : 'sticky bg-white/20 backdrop-blur-[6px]'"
+  >
     <div class="container flex items-center py-4 lg:py-5">
       <div class="flex flex-1 items-center justify-between">
         <nav class="flex items-center gap-0">
@@ -16,6 +19,12 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
 import LocaleSwitcher from '@/components/ui/LocaleSwitcher.vue'
 import NavLink from '@/components/ui/NavLink.vue'
+
+const route = useRoute()
+const isHome = computed(() => route.path === '/')
 </script>

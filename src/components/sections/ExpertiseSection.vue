@@ -1,5 +1,5 @@
 <template>
-  <section id="expertise" class="py-16 lg:py-20" data-figma-node="1:325">
+  <section id="expertise" class="py-16 lg:py-20">
     <header class="mb-12 flex flex-col gap-3">
       <h2 class="text-ink-dim font-sans text-3xl font-bold lg:text-4xl">
         {{ $t('expertise.title') }}
@@ -10,7 +10,11 @@
     </header>
 
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-6">
-      <div v-for="card in cards" :key="card.prefix" class="flex flex-col gap-4 rounded-xl bg-white px-6 py-5 shadow">
+      <div
+        v-for="card in cards"
+        :key="card.prefix"
+        class="shadow-card flex flex-col gap-4 rounded-xl bg-white px-6 py-5"
+      >
         <h3 class="text-ink-dim font-sans text-2xl font-semibold">
           {{ $t(`expertise.${card.prefix}Title`) }}
         </h3>

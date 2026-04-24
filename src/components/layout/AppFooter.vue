@@ -10,6 +10,10 @@
         </p>
       </div>
 
+      <div class="flex justify-center">
+        <a class="text-accent text-3xl font-medium" href="mailto:matskosmog@gmail.com">matskosmog@gmail.com</a>
+      </div>
+
       <div class="flex flex-wrap items-center justify-center gap-3 lg:gap-6">
         <Button as-child>
           <a href="https://www.linkedin.com/in/alexey-matsko-867862216/" target="_blank">

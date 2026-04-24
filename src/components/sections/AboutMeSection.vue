@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="py-16 lg:py-20" data-figma-node="1:286">
+  <section id="about" class="py-16 lg:py-20">
     <h2 class="text-ink-dim mb-6 font-sans text-3xl font-bold lg:text-4xl">
       {{ $t('about.title') }}
     </h2>
