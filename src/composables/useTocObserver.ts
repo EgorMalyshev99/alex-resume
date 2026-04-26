@@ -1,5 +1,12 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 
+export function scrollToTocSection(anchor: string, offset = 96) {
+  const el = document.getElementById(anchor)
+  if (!el) return
+  const top = el.getBoundingClientRect().top + window.scrollY - offset
+  window.scrollTo({ top, behavior: 'smooth' })
+}
+
 export function useTocObserver(anchors: string[]) {
   const activeAnchor = ref('')
 

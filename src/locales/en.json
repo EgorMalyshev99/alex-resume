@@ -7,7 +7,8 @@
   },
   "hero": {
     "greeting": "I'm",
-    "intro": "Alex and as a Senior Product Designer",
+    "introBefore": "Alex and as a ",
+    "introRole": "Senior Product Designer",
     "titleLine1": "I design digital products for",
     "titleLine2": "B2B and B2C",
     "ctaDownload": "Download CV",
@@ -224,7 +225,7 @@
     "impact3Title": "Reduced operational complexity",
     "impact3Body": "Shifted the process from training thousands of scouts to a more lightweight system supported by product guidance and AI follow-up.",
     "goalTitle": "Goal",
-    "goalBody": "The main goal was to turn influencer scouting into a scalable product workflow that could be handled not only by trained scouts, but also by everyday users. This required designing a clear and guided outreach experience, improving the quality of first contact through structured pre-message engagement, and reducing dependence on a large manually managed scout operation by shifting more of the process into product logic and AI-supported follow-up.",
+    "goalBody": "The main goal was to <span class=\"font-bold\">turn influencer scouting into a scalable product workflow</span> that could be handled not only by trained scouts, but also by everyday users. This required designing a <span class=\"font-bold\">clear and guided outreach experience</span>, improving the quality of first contact through <span class=\"font-bold\">structured pre-message engagement</span>, and reducing dependence on a <span class=\"font-bold\">large manually managed scout operation</span> by shifting more of the process into <span class=\"font-bold\">product logic and AI-supported follow-up</span>.",
     "myRoleTitle": "My Role",
     "myRoleIntro": "As a Lead Product Designer, I owned the end-to-end product logic and experience strategy.",
     "role1Title": "UX Strategy",

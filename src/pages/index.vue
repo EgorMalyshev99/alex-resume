@@ -8,7 +8,7 @@
     >
       <div class="container py-12 lg:grid lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-10 lg:py-25">
         <SiteSidebar />
-        <div class="flex flex-col">
+        <div class="flex max-w-200 flex-col">
           <CasesSection />
           <AboutMeSection />
           <ProcessSection />

@@ -2,8 +2,8 @@
   <DefaultLayout>
     <div class="bg-paper">
       <!-- Hero -->
-      <section class="bg-paper px-4 pt-8 pb-12 lg:px-20 lg:pt-25 lg:pb-15">
-        <div class="mx-auto flex max-w-310 flex-col gap-10 lg:gap-15">
+      <section class="bg-paper pt-8 pb-12 lg:pt-25 lg:pb-15">
+        <div class="container flex flex-col gap-10 lg:gap-15">
           <RouterLink
             to="/"
             class="text-brand text-4.25 inline-flex w-fit items-center gap-2 font-semibold hover:underline"
@@ -11,7 +11,7 @@
             ← {{ $t('case.back') }}
           </RouterLink>
 
-          <h1 class="text-ink-dim lg:text-25 font-sans text-5xl font-bold">
+          <h1 class="text-ink-dim font-sans text-5xl font-bold lg:text-[100px]">
             {{ $t('brands.title') }}
           </h1>
 
@@ -76,24 +76,27 @@
       </section>
 
       <!-- Body -->
-      <section class="bg-paper px-4 py-16 lg:px-20 lg:py-30">
-        <div class="mx-auto max-w-310">
+      <section class="bg-paper container lg:py-30">
+        <div class="mx-auto">
           <div class="flex flex-col gap-16 lg:grid lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-10">
-            <nav class="hidden lg:block">
-              <ul class="sticky top-24 flex flex-col gap-3">
-                <li v-for="toc in tocItems" :key="toc.anchor">
-                  <a
-                    :href="`#${toc.anchor}`"
-                    class="hover:text-brand text-xl transition-colors"
-                    :class="activeAnchor === toc.anchor ? 'font-bold text-neutral-900' : 'text-ink-dim'"
-                  >
-                    {{ toc.label }}
-                  </a>
-                </li>
-              </ul>
-            </nav>
+            <aside class="hidden w-75 shrink-0 self-start lg:sticky lg:top-24 lg:block">
+              <nav class="flex flex-col gap-4 font-sans">
+                <ul class="flex flex-col gap-2">
+                  <li v-for="toc in tocItems" :key="toc.anchor">
+                    <a
+                      :href="`#${toc.anchor}`"
+                      class="text-ink-dim cursor-pointer"
+                      :class="activeAnchor === toc.anchor ? 'text-2xl font-bold' : 'text-xl'"
+                      @click.prevent="scrollToTocSection(toc.anchor)"
+                    >
+                      {{ toc.label }}
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
 
-            <div class="flex flex-col gap-16 lg:gap-30">
+            <div class="flex max-w-200 flex-col gap-16 lg:gap-30">
               <div id="goal" class="flex flex-col gap-3">
                 <h2 class="text-ink-dim text-3xl font-bold">{{ $t('brands.goalTitle') }}</h2>
                 <!-- eslint-disable-next-line vue/no-v-html -- trusted locale copy -->
@@ -128,7 +131,7 @@
                 <div class="flex flex-col gap-6">
                   <div v-for="i in 4" :key="i" class="bg-surface shadow-card flex items-center gap-5 rounded-xl p-6">
                     <img :src="decisionCardIcons[i - 1]" class="size-15 shrink-0" width="60" height="60" alt="" />
-                    <div class="flex flex-col gap-3">
+                    <div class="flex flex-col gap-2">
                       <p class="text-ink-dim text-2xl font-semibold">
                         {{ $t(`brands.process${i}Title`) }}
                       </p>
@@ -192,7 +195,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { RouterLink } from 'vue-router'
 
-import { useTocObserver } from '@/composables/useTocObserver'
+import { scrollToTocSection, useTocObserver } from '@/composables/useTocObserver'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 
 const { t } = useI18n()

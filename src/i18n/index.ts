@@ -9,6 +9,9 @@ export type SupportedLocale = (typeof SUPPORT_LOCALES)[number]
 const STORAGE_KEY = 'locale'
 const DEFAULT_LOCALE: SupportedLocale = 'en'
 
+/** Set to `true` when the language switcher is shown again; until then the site stays English-only. */
+export const isLocalePickerEnabled = false
+
 function detectInitialLocale(): SupportedLocale {
   if (typeof window === 'undefined') return DEFAULT_LOCALE
   const stored = window.localStorage.getItem(STORAGE_KEY)
@@ -19,7 +22,7 @@ function detectInitialLocale(): SupportedLocale {
   return (SUPPORT_LOCALES as readonly string[]).includes(browser) ? (browser as SupportedLocale) : DEFAULT_LOCALE
 }
 
-const initialLocale = detectInitialLocale()
+const initialLocale: SupportedLocale = isLocalePickerEnabled ? detectInitialLocale() : DEFAULT_LOCALE
 
 export const i18n = createI18n({
   legacy: false,

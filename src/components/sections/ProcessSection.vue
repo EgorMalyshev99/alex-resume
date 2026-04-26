@@ -10,7 +10,7 @@
     </header>
 
     <ol class="flex flex-col gap-6">
-      <li v-for="i in 5" :key="i" class="flex items-start gap-5 rounded-xl bg-white p-6 lg:p-7">
+      <li v-for="i in 5" :key="i" class="flex items-center gap-5 rounded-xl bg-white p-6 lg:p-7">
         <img :src="images[i - 1]" class="size-15 shrink-0" alt="" />
         <div class="flex flex-col gap-3">
           <h3 class="text-ink-dim font-sans text-lg font-semibold lg:text-2xl">

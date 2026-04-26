@@ -26,7 +26,7 @@
         {{ t('cases.readMore') }} <img src="/icons/icon-arrow-right.svg" alt="arrow" />
       </RouterLink>
     </div>
-    <p class="mt-auto">{{ t('case.nda') }}</p>
+    <p class="mt-auto text-center text-xs italic">{{ t('case.nda') }}</p>
   </article>
 </template>
 

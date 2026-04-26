@@ -52,16 +52,6 @@ const cases = computed(() => [
     imageOrderClass: '',
   },
   {
-    title: 'cases.managerTitle',
-    role: 'cases.managerRole',
-    focus: 'Campaign management, B2B UX, User flow',
-    description: 'cases.managerDescription',
-    tags: ['cases.managerTag1', 'cases.managerTag2', 'cases.managerTag3'],
-    href: '/cases/rizzult-talent-manager',
-    image: '/managers-case-preview.jpg',
-    imageOrderClass: 'lg:order-1',
-  },
-  {
     title: 'cases.brandsTitle',
     role: 'cases.brandsRole',
     focus: 'User flow, mobile UX',
@@ -70,6 +60,16 @@ const cases = computed(() => [
     href: '/cases/rizzult-brands',
     image: '/brands-case-preview.jpg',
     imageOrderClass: '',
+  },
+  {
+    title: 'cases.managerTitle',
+    role: 'cases.managerRole',
+    focus: 'Campaign management, B2B UX, User flow',
+    description: 'cases.managerDescription',
+    tags: ['cases.managerTag1', 'cases.managerTag2', 'cases.managerTag3'],
+    href: '/cases/rizzult-talent-manager',
+    image: '/managers-case-preview.jpg',
+    imageOrderClass: 'lg:order-1',
   },
 ])
 </script>

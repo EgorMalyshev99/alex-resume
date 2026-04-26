@@ -19,12 +19,12 @@
           class="size-15.5 shrink-0 rounded-xl object-cover"
         />
         <div class="flex flex-1 flex-col gap-3">
-          <div class="flex flex-col gap-1 lg:flex-row lg:items-baseline lg:justify-between">
-            <div class="flex flex-col gap-1">
-              <p class="text-2xl font-bold">{{ $t(`experience.${item.key}Company`) }}</p>
+          <div class="flex flex-col gap-1">
+            <p class="text-2xl font-bold">{{ $t(`experience.${item.key}Company`) }}</p>
+            <div class="flex items-center justify-between gap-3">
               <p class="text-xl font-medium">{{ $t(`experience.${item.key}Role`) }}</p>
+              <span class="text-lg">{{ $t(`experience.${item.key}Period`) }}</span>
             </div>
-            <span class="text-lg">{{ $t(`experience.${item.key}Period`) }}</span>
           </div>
           <ul class="flex flex-col gap-2">
             <li v-for="i in item.bullets" :key="i" class="flex items-start gap-3">
