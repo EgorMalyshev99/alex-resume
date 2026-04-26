@@ -17,11 +17,7 @@
           </span>
           <span>
             {{ $t('hero.introBefore')
-            }}<span
-              class="hero-role-title inline bg-size-[110%_auto] bg-position-[center_75%] bg-no-repeat pb-1"
-              :style="{ backgroundImage: 'url(/hero-title-decor.png)' }"
-              >{{ $t('hero.introRole') }}</span
-            >
+            }}<span class="hero-title-role inline bg-no-repeat">{{ $t('hero.introRole') }}</span>
           </span>
         </div>
 
@@ -51,3 +47,23 @@ const scrollToCases = () => {
   document.getElementById('cases')?.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
+
+<style scoped>
+.hero-title-role {
+  position: relative;
+}
+
+.hero-title-role::before {
+  content: '';
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 50px;
+  background-image: url('/hero-title-decor.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+</style>
