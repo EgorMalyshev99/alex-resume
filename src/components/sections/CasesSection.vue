@@ -23,7 +23,7 @@
         <RouterLink
           :to="item.href"
           :class="[
-            'block overflow-hidden rounded-b-xl bg-neutral-100 lg:rounded-r-xl lg:rounded-b-none',
+            'block overflow-hidden rounded-b-xl bg-neutral-100 lg:rounded-r-xl lg:rounded-bl-none',
             item.imageOrderClass,
           ]"
         >

@@ -1,6 +1,6 @@
 <template>
   <section id="experience" class="py-16 lg:py-20">
-    <div class="mb-12 flex flex-col gap-3">
+    <div class="flex flex-col gap-3">
       <h2 class="text-ink-dim font-sans text-3xl font-bold lg:text-4xl">
         {{ $t('experience.title') }}
       </h2>

@@ -8,16 +8,18 @@
       <div class="flex flex-col items-center gap-6">
         <div class="text-ink-dim flex flex-wrap items-center justify-center gap-3 font-sans text-xl lg:text-2xl">
           <span>{{ $t('hero.greeting') }}</span>
-          <span
-            class="transition-size inline-block size-7.5 overflow-hidden rounded-full bg-neutral-300 align-middle
-              duration-300 hover:size-17"
-            aria-hidden="true"
-          >
-            <img src="/avatar.jpg" class="size-full object-cover" alt="Avatar" />
+          <span class="group inline-block" aria-hidden="true">
+            <img
+              src="/avatar.jpg"
+              class="transition-size size-7.5 rounded-full object-cover duration-300 group-hover:size-17
+                group-hover:-translate-y-6"
+              alt="Avatar"
+            />
           </span>
-          <span>
+          <span class="relative">
             {{ $t('hero.introBefore')
             }}<span class="hero-title-role inline bg-no-repeat">{{ $t('hero.introRole') }}</span>
+            <img src="/hero-cursor.png" width="85" height="55" class="absolute top-1/4 -right-24" alt="Design" />
           </span>
         </div>
 

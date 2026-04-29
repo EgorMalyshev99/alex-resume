@@ -82,8 +82,8 @@
           <div class="flex flex-col gap-6">
             <h2 class="text-ink-dim text-[26px] font-bold">{{ $t('case.impactOverviewLabel') }}</h2>
             <div class="flex flex-col gap-4 lg:flex-row">
-              <div v-for="i in 3" :key="i" class="bg-surface shadow-card flex flex-1 flex-col gap-4 rounded-xl p-6">
-                <p class="text-ink-dim text-xl font-semibold">{{ $t(`influencers.impact${i}Title`) }}</p>
+              <div v-for="i in 3" :key="i" class="bg-surface shadow-card flex flex-1 flex-col gap-2 rounded-xl p-6">
+                <p class="text-ink-dim text-xl leading-tight font-semibold">{{ $t(`influencers.impact${i}Title`) }}</p>
                 <p class="text-ink-dim text-base">{{ $t(`influencers.impact${i}Body`) }}</p>
               </div>
             </div>
@@ -131,7 +131,7 @@
                     class="bg-surface shadow-card flex flex-col justify-center gap-5 rounded-xl p-6"
                   >
                     <img :src="roleCardIcons[i - 1]" class="size-15 shrink-0" width="60" height="60" alt="" />
-                    <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-2">
                       <p class="text-ink-dim text-2xl font-semibold">
                         {{ $t(`influencers.role${i}Title`) }}
                       </p>
