@@ -54,6 +54,8 @@
         </Button>
       </div>
     </div>
+
+    <img v-if="!isLg" src="/hero-cursor.png" width="85" height="55" class="absolute right-4 bottom-20" alt="Design" />
   </section>
 </template>
 
