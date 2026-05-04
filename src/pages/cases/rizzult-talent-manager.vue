@@ -2,13 +2,20 @@
   <DefaultLayout>
     <div class="bg-paper">
       <!-- Hero -->
-      <section class="bg-paper pt-8 pb-12 lg:pt-25 lg:pb-15">
+      <section class="bg-paper pt-8 pb-15 lg:pt-25">
         <div class="container flex flex-col gap-10 lg:gap-15">
           <RouterLink
             to="/"
             class="text-brand text-4.25 inline-flex w-fit items-center gap-2 font-semibold hover:underline"
           >
-            ← {{ $t('case.back') }}
+            <img
+              src="/icons/icon-arrow-right-alt.png"
+              width="22"
+              height="22"
+              class="size-5.5 scale-x-[-1]"
+              alt="Arrow"
+            />
+            {{ $t('case.back') }}
           </RouterLink>
 
           <h1 class="text-ink-dim font-sans text-5xl font-bold lg:text-[100px]">
@@ -18,11 +25,11 @@
           <div class="bg-surface shadow-card flex flex-col gap-3 rounded-xl p-6">
             <div class="flex flex-col gap-5 lg:flex-row">
               <div class="flex flex-1 flex-col gap-3">
-                <p class="text-ink-dim text-[26px] font-bold">{{ $t('case.overviewLabel') }}</p>
+                <p class="text-ink-dim text-2xl font-bold lg:text-[26px]">{{ $t('case.overviewLabel') }}</p>
                 <p class="text-ink-dim text-lg">{{ $t('manager.overview') }}</p>
               </div>
               <div class="flex w-full flex-col gap-3 lg:w-50">
-                <p class="text-ink-dim text-[26px] font-bold">{{ $t('case.teamLabel') }}</p>
+                <p class="text-ink-dim text-2xl font-bold lg:text-[26px]">{{ $t('case.teamLabel') }}</p>
                 <div class="flex flex-col gap-1">
                   <div class="flex">
                     <div
@@ -53,7 +60,7 @@
                 </div>
               </div>
               <div class="flex w-full flex-col gap-3 lg:w-75">
-                <p class="text-ink-dim text-[26px] font-bold">{{ $t('case.ndaLabel') }}</p>
+                <p class="text-ink-dim text-2xl font-bold lg:text-[26px]">{{ $t('case.ndaLabel') }}</p>
                 <p class="text-ink-dim text-lg">{{ $t('manager.nda') }}</p>
               </div>
             </div>
@@ -80,9 +87,13 @@
           </div>
 
           <div class="flex flex-col gap-6">
-            <h2 class="text-ink-dim text-[26px] font-bold">{{ $t('case.impactOverviewLabel') }}</h2>
+            <h2 class="text-ink-dim text-2xl font-bold lg:text-[26px]">{{ $t('case.impactOverviewLabel') }}</h2>
             <div class="flex flex-col gap-4 lg:flex-row">
-              <div v-for="i in 3" :key="i" class="bg-surface shadow-card flex flex-1 flex-col gap-2 rounded-xl p-6">
+              <div
+                v-for="i in 3"
+                :key="i"
+                class="bg-surface shadow-card flex flex-1 flex-col gap-3 rounded-xl p-6 lg:gap-2"
+              >
                 <p class="text-ink-dim text-xl leading-tight font-semibold">{{ $t(`manager.impact${i}Title`) }}</p>
                 <p class="text-ink-dim text-base">{{ $t(`manager.impact${i}Body`) }}</p>
               </div>
@@ -92,7 +103,7 @@
       </section>
 
       <!-- Body -->
-      <section class="bg-paper container lg:py-30">
+      <section class="bg-paper container py-15 lg:py-30">
         <div class="mx-auto">
           <div class="flex flex-col gap-16 lg:grid lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-10">
             <aside class="hidden w-75 shrink-0 self-start lg:sticky lg:top-24 lg:block">
@@ -112,7 +123,7 @@
               </nav>
             </aside>
 
-            <div class="flex max-w-200 flex-col gap-16 lg:gap-30">
+            <div class="flex max-w-200 flex-col gap-30">
               <div id="goal" class="flex flex-col gap-3">
                 <h2 class="text-ink-dim text-3xl font-bold">{{ $t('manager.goalTitle') }}</h2>
                 <!-- eslint-disable-next-line vue/no-v-html -- trusted locale copy -->
@@ -165,7 +176,11 @@
                   <p class="text-ink-dim text-xl">{{ $t('manager.decisionsIntro') }}</p>
                 </div>
                 <div class="flex flex-col gap-6">
-                  <div v-for="i in 4" :key="i" class="bg-surface shadow-card flex gap-5 rounded-xl p-6">
+                  <div
+                    v-for="i in 4"
+                    :key="i"
+                    class="bg-surface shadow-card flex flex-col gap-5 rounded-xl p-6 lg:flex-row"
+                  >
                     <div
                       class="bg-accent-subtle text-accent flex size-7.5 shrink-0 items-center justify-center
                         rounded-full text-sm font-semibold"

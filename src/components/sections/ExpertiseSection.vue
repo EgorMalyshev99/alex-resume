@@ -1,6 +1,6 @@
 <template>
-  <section id="expertise" class="py-16 lg:py-20">
-    <header class="mb-12 flex flex-col gap-3">
+  <section id="expertise" class="py-15">
+    <header class="mb-8 flex flex-col gap-3 lg:mb-12">
       <h2 class="text-ink-dim font-sans text-3xl font-bold lg:text-4xl">
         {{ $t('expertise.title') }}
       </h2>

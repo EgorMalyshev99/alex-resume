@@ -1,5 +1,9 @@
 <template>
-  <canvas ref="canvasRef" class="pointer-events-none absolute inset-0 z-0 h-full w-full blur-3xl" aria-hidden="true" />
+  <canvas
+    ref="canvasRef"
+    class="pointer-events-none absolute inset-0 z-0 h-full w-full blur-2xl lg:blur-3xl"
+    aria-hidden="true"
+  />
 </template>
 
 <script setup lang="ts">
@@ -8,15 +12,18 @@ import { onMounted, onUnmounted, ref } from 'vue'
 const ORANGE = { r: 207, g: 109, b: 10 } as const
 const INDIGO = { r: 60, g: 57, b: 234 } as const
 
-/** Diameter ≈ 68% canvas width (before pulse); centers just past corners so most glow stays in view. */
 const RADIUS_WIDTH_FRAC = 0.34
-/** Radius scales between 100% and 80% of base (max −20%). */
+const MOBILE_MAX_WIDTH = 768
+const MOBILE_ANCHOR_PULL = 0.28
+const MOBILE_ANCHOR_X = 0.5
+const MOBILE_ANCHOR_Y = 0.36
+const MOBILE_RADIUS_BOOST = 1.45
 const RADIUS_PULSE_MIN = 0.8
 
 const SPHERES = [
-  { color: ORANGE, nx: 1.02, ny: -0.02, phase: 0, radiusMul: 1 },
-  { color: ORANGE, nx: 1.02, ny: 1.04, phase: 1.7, radiusMul: 1 },
-  { color: INDIGO, nx: -0.02, ny: 1.03, phase: 3.1, radiusMul: 1.5 },
+  { color: ORANGE, nx: 1.02, ny: -0.02, phase: 0, radiusMul: 1, skipOnCompact: false },
+  { color: ORANGE, nx: 1.02, ny: 1.04, phase: 1.7, radiusMul: 1, skipOnCompact: true },
+  { color: INDIGO, nx: -0.02, ny: 1.03, phase: 3.1, radiusMul: 1.5, skipOnCompact: false },
 ] as const
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
@@ -50,14 +57,19 @@ onMounted(() => {
     const h = Math.max(1, ch)
     const motion = Math.min(w, h)
     const time = t * 0.0017
-    const baseR = w * RADIUS_WIDTH_FRAC
-    const amp = motion * 0.058
+    const compact = w < MOBILE_MAX_WIDTH
+    const pull = compact ? MOBILE_ANCHOR_PULL : 0
+    const radiusBoost = compact ? MOBILE_RADIUS_BOOST : 1
+    const baseR = w * RADIUS_WIDTH_FRAC * radiusBoost
+    const amp = motion * (compact ? 0.05 : 0.058)
 
     ctx.setTransform(1, 0, 0, 1, 0, 0)
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
 
     for (const s of SPHERES) {
+      if (compact && s.skipOnCompact) continue
+
       const ox =
         Math.sin(time * 0.78 + s.phase) * amp +
         Math.cos(time * 1.02 + s.phase * 1.4) * (amp * 0.45) +
@@ -66,8 +78,10 @@ onMounted(() => {
         Math.cos(time * 0.66 + s.phase * 1.1) * amp +
         Math.sin(time * 0.94 + s.phase * 0.85) * (amp * 0.42) +
         Math.cos(time * 1.28 + s.phase * 1.2) * (amp * 0.2)
-      const cx = s.nx * w + ox
-      const cy = s.ny * h + oy
+      const nx = s.nx + (MOBILE_ANCHOR_X - s.nx) * pull
+      const ny = s.ny + (MOBILE_ANCHOR_Y - s.ny) * pull
+      const cx = nx * w + ox
+      const cy = ny * h + oy
 
       const pulse =
         0.5 * (1 + Math.sin(time * 0.88 + s.phase * 2.2)) * 0.5 * (1 + Math.sin(time * 0.41 + s.phase * 1.1))

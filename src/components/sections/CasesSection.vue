@@ -20,14 +20,12 @@
           :href="item.href"
         />
 
-        <RouterLink
-          :to="item.href"
-          :class="[
-            'block overflow-hidden rounded-b-xl bg-neutral-100 lg:rounded-r-xl lg:rounded-bl-none',
-            item.imageOrderClass,
-          ]"
-        >
-          <img :src="item.image" :alt="$t(item.title)" class="size-full object-cover" />
+        <RouterLink :to="item.href" :class="cn('block bg-white lg:bg-transparent', item.imageOrderClass)">
+          <img
+            :src="item.image"
+            :alt="$t(item.title)"
+            class="size-full rounded-xl object-cover lg:rounded-l-none lg:rounded-r-xl"
+          />
         </RouterLink>
       </article>
     </div>
@@ -39,6 +37,7 @@ import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 
 import CaseCard from '@/components/ui/CaseCard.vue'
+import { cn } from '@/lib/utils'
 
 const cases = computed(() => [
   {

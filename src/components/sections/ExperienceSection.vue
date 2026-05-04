@@ -1,5 +1,5 @@
 <template>
-  <section id="experience" class="py-16 lg:py-20">
+  <section id="experience" class="py-15">
     <div class="flex flex-col gap-3">
       <h2 class="text-ink-dim font-sans text-3xl font-bold lg:text-4xl">
         {{ $t('experience.title') }}
@@ -11,34 +11,65 @@
 
     <ol class="flex flex-col divide-y divide-gray-100">
       <li v-for="item in items" :key="item.key" class="flex flex-col gap-4 py-6 lg:flex-row lg:gap-6 lg:py-8">
-        <img
-          :src="item.avatar"
-          :alt="$t(`experience.${item.key}Company`)"
-          width="62"
-          height="62"
-          class="size-15.5 shrink-0 rounded-xl object-cover"
-        />
-        <div class="flex flex-1 flex-col gap-3">
-          <div class="flex flex-col gap-1">
-            <p class="text-2xl font-bold">{{ $t(`experience.${item.key}Company`) }}</p>
-            <div class="flex items-center justify-between gap-3">
-              <p class="text-xl font-medium">{{ $t(`experience.${item.key}Role`) }}</p>
-              <span class="text-lg">{{ $t(`experience.${item.key}Period`) }}</span>
+        <template v-if="isLg">
+          <img
+            :src="item.avatar"
+            :alt="$t(`experience.${item.key}Company`)"
+            width="62"
+            height="62"
+            class="size-15.5 shrink-0 rounded-xl object-cover"
+          />
+          <div class="flex flex-1 flex-col gap-3">
+            <div class="mb-3 flex flex-col gap-1">
+              <p class="text-2xl font-bold">{{ $t(`experience.${item.key}Company`) }}</p>
+              <div class="flex items-center justify-between gap-3">
+                <p class="text-xl font-medium">{{ $t(`experience.${item.key}Role`) }}</p>
+                <span class="text-lg">{{ $t(`experience.${item.key}Period`) }}</span>
+              </div>
+            </div>
+
+            <ul class="flex flex-col gap-2">
+              <li v-for="i in item.bullets" :key="i" class="flex items-start gap-3">
+                <img src="/icons/icon-arrow-right-alt.png" width="26" height="26" class="size-6.5" alt="arrow right" />
+                <span class="text-base text-gray-300">{{ $t(`experience.${item.key}Bullet${i}`) }}</span>
+              </li>
+            </ul>
+          </div>
+        </template>
+        <template v-else>
+          <div class="flex items-center gap-3">
+            <img
+              :src="item.avatar"
+              :alt="$t(`experience.${item.key}Company`)"
+              width="62"
+              height="62"
+              class="size-15.5 shrink-0 rounded-xl object-cover"
+            />
+            <div class="flex flex-col gap-1">
+              <p class="text-2xl font-bold">{{ $t(`experience.${item.key}Company`) }}</p>
+              <div class="flex items-center justify-between gap-3">
+                <p class="text-xl font-medium">{{ $t(`experience.${item.key}Role`) }}</p>
+              </div>
             </div>
           </div>
+          <p class="text-lg">{{ $t(`experience.${item.key}Period`) }}</p>
           <ul class="flex flex-col gap-2">
-            <li v-for="i in item.bullets" :key="i" class="flex items-start gap-3">
+            <li v-for="i in item.bullets" :key="i" class="flex items-center gap-3">
               <img src="/icons/icon-arrow-right-alt.png" width="26" height="26" class="size-6.5" alt="arrow right" />
               <span class="text-base text-gray-300">{{ $t(`experience.${item.key}Bullet${i}`) }}</span>
             </li>
           </ul>
-        </div>
+        </template>
       </li>
     </ol>
   </section>
 </template>
 
 <script setup lang="ts">
+import { useScreen } from '@/lib/screen'
+
+const { isLg } = useScreen()
+
 const items = [
   { key: 'rizzult', avatar: '/rizzult-logo.png', bullets: 3 },
   { key: 'acme', avatar: '/drim-logo.png', bullets: 2 },

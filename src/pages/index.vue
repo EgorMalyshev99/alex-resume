@@ -6,14 +6,14 @@
       class="bg-paper relative z-10 rounded-t-3xl transition-[top] duration-200 ease-in-out"
       :class="isScrolled ? '-top-10' : 'top-0'"
     >
-      <div class="container py-12 lg:grid lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-10 lg:py-25">
+      <div class="container py-8 lg:grid lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-10 lg:py-25">
         <SiteSidebar />
         <div class="flex max-w-200 flex-col">
-          <CasesSection />
+          <CasesSection class="mb-15" />
           <AboutMeSection />
           <ProcessSection />
           <ExpertiseSection />
-          <ExperienceSection />
+          <ExperienceSection class="pb-0" />
         </div>
       </div>
     </div>

@@ -1,8 +1,9 @@
 <template>
   <article
-    class="grid h-full grid-rows-[1fr_auto_1fr] gap-4 rounded-t-xl bg-white p-6 lg:rounded-t-none lg:rounded-l-xl"
+    class="grid h-full gap-4 rounded-t-xl bg-white px-6 py-8 lg:grid-rows-[1fr_auto_1fr] lg:rounded-t-none
+      lg:rounded-l-xl lg:p-6"
   >
-    <div></div>
+    <div class="hidden lg:block"></div>
     <div class="flex flex-col gap-5">
       <div class="flex flex-col gap-2">
         <RouterLink v-if="href" :to="href" class="text-ink-dim text-2xl font-semibold">{{ title }}</RouterLink>
@@ -28,7 +29,7 @@
         </RouterLink>
       </div>
     </div>
-    <p class="mt-auto text-center text-xs italic">{{ t('case.nda') }}</p>
+    <p class="mt-auto hidden text-center text-xs italic lg:block">{{ t('case.nda') }}</p>
   </article>
 </template>
 
