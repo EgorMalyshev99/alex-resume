@@ -1,6 +1,6 @@
 <template>
   <section
-    class="bg-paper relative flex min-h-dvh flex-col justify-center overflow-hidden px-4 py-20 lg:px-16 lg:py-24"
+    class="bg-paper relative flex min-h-screen flex-col justify-center overflow-hidden px-4 py-20 lg:px-16 lg:py-24"
   >
     <HeroGlowSpheres />
 
