@@ -1,5 +1,4 @@
 .idea
-.vscode
 .claude
 .obsidian
 .env
@@ -8,3 +7,4 @@ node_modules
 dist
 typed-router.d.ts
 .gitnexus
+.vscode/

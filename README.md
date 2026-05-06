@@ -1,48 +1,30 @@
 # Alex CV
 
-This template should help get you started developing with Vue 3 in Vite.
+Моя реализация проекта (резюме) для знакомого дизайнера.
 
-## Recommended IDE Setup
+[Дизайн в Figma](https://www.figma.com/design/ohcDLK1DN5KSWw8ZMe7Kbx/%D0%9C%D0%BE%D0%B9-%D0%9B%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3?node-id=0-1&p=f&t=hqaupu0nepf34Zez-0)
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Технологии
 
-## Recommended Browser Setup
+- Vue 3
+- Vite 8
+- TypeScript
+- Vue Router v5 (file-based routing)
+- Tailwind CSS v4
+- pnpm
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## Запуск проекта
 
 ```sh
 pnpm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 pnpm dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## Полезные команды
 
 ```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
+pnpm build    # type-check + production build
+pnpm preview  # локальный просмотр production-сборки
+pnpm lint     # oxlint -> eslint
+pnpm format   # prettier для src/
 ```
